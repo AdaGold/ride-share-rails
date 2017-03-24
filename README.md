@@ -9,7 +9,8 @@ As you are using ActiveRecord to access the database compare the methods that ar
 This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your partner can create the waves yourself based on the dependencies of the requirements given.
 
 ## Learning Goals
-This project should demonstrate you ability to
+This project should demonstrate you ability to:
+1.  Use CSV files to seed data into a rails app.
 1.  Create multiple related Active Record Models
 1.  Create models with validations and methods performing business logic
 1.  Craft effective RESTful routing
