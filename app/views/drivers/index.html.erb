@@ -1,2 +1,22 @@
-<h1>Drivers#index</h1>
-<p>Find me in app/views/drivers/index.html.erb</p>
+<h1>Rideshare Drivers</h1>
+<article class="driver-list">
+  <ul>
+    <% @drivers.each do |driver| %>
+    <li>
+      <section class="driver">
+        <aside>
+          <%= image_tag "http://www.fillmurray.com/50/50", alt: driver.name, class: "driver"%>
+        </aside>
+        <section class="driver-item">
+          <h2>
+            <%= link_to driver.name, driver_path(driver.id) %>
+          </h2>
+          <h3>
+            <%= driver.average_rating %>
+          </h3>
+        </section>
+      </section>
+    </li>
+    <% end %>
+  </ul>
+</article>

@@ -18,6 +18,9 @@ passengers = []
   car = CARS.sample
   driver = Driver.new name: Faker::LordOfTheRings.character, vin: Vinbot::Vin.generate, car_make: car[0], car_model: car[1]
 
+  while Driver.find_by(name: driver.name) != nil
+    driver.name = Faker::Name.name
+  end
   driver.save
   drivers.push(driver)
 end

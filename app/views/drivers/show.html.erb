@@ -1,2 +1,7 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+<h1><%= @driver.name %></h1>
+<h2> Car: <%= @driver.make_and_model %></h2>
+<h2>Average Rating: <%= @driver.average_rating %></h2>
+<p>
+  <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+</p>
