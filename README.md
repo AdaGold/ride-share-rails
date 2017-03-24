@@ -68,27 +68,29 @@ However far you and your partner get, the application should have, at a minimum,
 - From any page I can click a menu entry to view a list of all drivers
 
 
-- Viewing Passengers
-	- On the passenger list page I can click on a passenger to see that passenger's details.
-	- On the passenger's details page, I can see a list of trips that passenger went on.
-	- The passenger details page also shows the total amount the passenger has been charged.
-	- Clicking on an individual trip will bring up details for the trip.
-	- On a passenger page I can edit and delete passengers.
-	- When viewing a passenger's details I can add a new trip
+### Viewing Passengers
+
+- On the passenger list page I can click on a passenger to see that passenger's details.
+- On the passenger's details page: 
+    -  I can see a list of trips that passenger went on.
+    - The passenger details page also shows the total amount the passenger has been charged.
+    - Clicking on an individual trip will bring up details for the trip.
+    - On a passenger page I can edit and delete passengers.
+    - When viewing a passenger's details I can add a new trip
 	
-- Investigating Trips
-	-  On a trip detail page I can view details of the trip and links to the driver and the passenger
-	-  On the trip details page I can choose to edit and delete details about the trip.
-	-  On the trip details page I can change the driver & passenger for the trip.  
+### Investigating Trips
+  -  On a trip detail page I can view details of the trip and links to the driver and the passenger
+  -  On the trip details page I can choose to edit and delete details about the trip.
+  -  On the trip details page I can change the driver & passenger for the trip.  
 	
 
-- Viewing Drivers
-	- From any page I can click a menu entry to be taken to the driver index page and see a list of all the drivers
-	- On the driver index page I can click on an individual driver to see that person's details.
-	- On the driver details page, I can see a list of trips that driver made.
-		- Clicking on an individual trip will bring up details for the trip.
-	- The driver details page will also show the driver's total earnings (total of each trip minus 15%).
-	- The driver list and driver details pages show the driver's average rating.
-	- On the driver page I can create, edit and delete drivers.
+### Viewing Drivers
+  - From any page I can click a menu entry to be taken to the driver index page and see a list of all the drivers
+  - On the driver index page I can click on an individual driver to see that person's details.
+  - On the driver details page, I can see a list of trips that driver made.
+    - Clicking on an individual trip will bring up details for the trip.
+    - The driver details page will also show the driver's total earnings (total of each trip minus 15%).
+  - The driver list and driver details pages show the driver's average rating.
+  - On the drivers page I can create, edit and delete drivers.
 
 
