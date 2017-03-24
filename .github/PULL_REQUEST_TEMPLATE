@@ -1,0 +1,12 @@
+# Task List
+Congratulations! You're submitting your assignment!
+
+## Comprehension Questions
+| Question | Answer    |
+| :------------- | :------------- |
+| Describe in your own words what the Model is doing in Rails |  |
+| Describe in your own words what the Controller is doing in Rails |    |
+| Describe in your own words what the View is doing in Rails |  |
+| What is the purpose of using strong params? (i.e. the params method in the controller) |        |
+| How are Rails migrations related to Rails models? |   |
+| Describe one area of Rails that are still unclear on |    |
