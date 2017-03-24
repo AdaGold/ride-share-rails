@@ -8,6 +8,14 @@ As you are using ActiveRecord to access the database compare the methods that ar
 
 This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your partner can create the waves yourself based on the dependencies of the requirements given.
 
+## Learning Goals
+This project should demonstrate you ability to
+1.  Create multiple related Active Record Models
+1.  Create models with validations and methods performing business logic
+1.  Craft effective RESTful routing
+1.  Work with a partner to create an attractive and functional Rails site
+1.  Practice Agile methodology
+
 ## Best Practices
 - Use git relentlessly
 - Pair program on difficult problems and to share learning experiences
@@ -47,6 +55,7 @@ However far you and your partner get, the application should have, at a minimum,
 1.  You can include nested routes, but avoid routes that are more than 2-levels deep.
 1.  Use Semantic HTML
 1.  Make good use of partial views
+1.  Don't forget validations! (can a trip exist without a driver or passenger...)
 1.  You may not be able to get all the user stories done.  **Prioritize!** 
 
 ## User Stories
