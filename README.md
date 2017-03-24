@@ -1,6 +1,6 @@
 # Rideshare Rails
 
-In this application you will build a website to power a small community
+In this application you will build a website to model a small community ridesharing app.
 
 In this implementation we'll be seeding with static data, and also building a tool to allow passengers or new drivers to sign up and add their own data.
 
