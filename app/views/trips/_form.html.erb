@@ -1,0 +1,39 @@
+<section class="trip form">
+  <%= form_for @trip, url: url do |f| %>
+    <div class="row">
+      <div class  ="small-6 columns">
+        <%= f.label :date, "Date:  " %>
+        <%= f.date_select :date %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.label :rating, "Rating" %>
+        <%= f.number_field :rating %>
+        <%= f.label :price, "Price" %>
+        <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: ''), step: :any %>
+      </div>
+    </div>
+  <div class="row">
+    <div class="small-6 columns">
+      <%= f.label :driver_id, "Driver" %>
+      <%= f.select(:driver_id) do %>
+        <% (Driver.all.collect { |d| [d.name, d.id]}).uniq.each do |driver| %>
+          <%= content_tag(:option, driver[0], value: driver[1], selected: driver[1].to_i == @trip.driver.id) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="small-6 columns">
+      <%= f.label :passenger_id, "Passenger" %>
+      <%= f.select(:passenger_id) do %>
+        <% (Passenger.all.collect { |p| [p.name, p.id]}).uniq.each do |passenger| %>
+          <%= content_tag(:option, passenger[0], value: passenger[1], selected: passenger[1].to_i == @trip.passenger.id) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="submit-btn small-12 columns">
+      <%= f.submit action_name %>
+    </div>
+  </div>
+<% end %>
+</section>

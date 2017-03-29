@@ -1,22 +1,26 @@
 <h1>Rideshare Drivers</h1>
 <article class="driver-list">
-  <ul>
+  <section class="row pagination-header">
+    <div class="large-12 small-12 columns">
+      <%= paginate @drivers %>
+    </div>
+  </section>
     <% @drivers.each do |driver| %>
-    <li>
-      <section class="driver">
-        <aside>
+
+      <section class="driver row">
+        <aside  class="small-2 large-2 columns">
           <%= image_tag "http://www.fillmurray.com/50/50", alt: driver.name, class: "driver"%>
         </aside>
-        <section class="driver-item">
+        <section class="driver-name small-2 large-6 columns">
           <h2>
             <%= link_to driver.name, driver_path(driver.id) %>
           </h2>
+        </section>
+        <section class="driver-rating small-2 large-4 columns">
           <h3>
-            <%= driver.average_rating %>
+            Average Rating: <%= driver.average_rating %>
           </h3>
         </section>
       </section>
-    </li>
     <% end %>
-  </ul>
 </article>

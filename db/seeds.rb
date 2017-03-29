@@ -38,5 +38,6 @@ end
   trip.rating = 1 + rand(4) # between 1 and 5
   trip.driver = drivers.sample
   trip.passenger = passengers.sample
+  trip.price = rand(1000) / 10.0
   trip.save
 end

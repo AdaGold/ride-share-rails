@@ -12,4 +12,48 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation
+ *= require foundation_and_overrides
+
+ *=
+
  */
+
+
+h2, h3 {
+  font-size: 0.75em;
+}
+
+label {
+  font-weight: bolder;
+  color: navy;
+}
+
+.pagination, .pagination::before, pagination::after {
+  display: inline;
+}
+
+.driver-list ul, .driver-list li, .driver-list li section, .driver-list li section h2 {
+  display: inline;
+}
+
+span.page, span.current, .pagination a, .pagination button {
+  display: inline;
+}
+
+.driver-picture {
+  display: inline-block;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: navy;
+  text-align: center;
+}
+section.driver {
+  margin: 5px;
+}
+.submit-btn {
+  text-align: center;
+}

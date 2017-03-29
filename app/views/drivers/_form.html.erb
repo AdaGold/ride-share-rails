@@ -1,0 +1,38 @@
+<section class="driver form">
+  <%= form_for @driver do |f| %>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.label :name, "Driver Name:  " %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.label :vin, "Vin Number" %>
+        <%= f.text_field :vin %>
+      </div>
+    </div>
+  <div class="row">
+    <div class="small-6 columns">
+      <%= f.label :car_make, "Car Make" %>
+      <%= f.select(:car_make) do %>
+      <% (Driver.all.collect { |m| m.car_make}).uniq.each do |make| %>
+        <%= content_tag(:option, make, value: make, selected: make == @driver.car_make) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="rows">
+    <div class="small-6 columns">
+      <%= f.label :car_model, "Car Model" %>
+      <%= f.select(:car_model) do %>
+        <% (Driver.all.collect { |m| m.car_model}).uniq.each do |model| %>
+          <%= content_tag(:option, model, value: model, selected: model == @driver.car_model) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="rows">
+    <div class="submit-btn small-12 columns">
+      <%= f.submit action_name %>
+    </div>
+  </div>
+<% end %>
+</section>

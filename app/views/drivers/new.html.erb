@@ -1,2 +1,8 @@
-<h1>Drivers#new</h1>
-<p>Find me in app/views/drivers/new.html.erb</p>
+<section class="driver">
+  <section class="header" >
+    <h2 class="form-title">
+      Add a new Driver
+    </h2>
+  </section>
+  <%= render partial: "form", locals: {action_name: "Create"} %>
+</section>
