@@ -12,6 +12,7 @@
 <section class="trip-details row">
   <h2>Trips</h2>
   <%= render partial: "shared/trip_list", locals: {trips: @passenger.trips.order(:date)} %>
+  <h2><%= link_to "Add a New Trip", new_passenger_trip_path(@passenger.id) %></h2>
 </section>
 <p>
   <%= link_to "Edit", edit_passenger_path(@passenger.id) %>

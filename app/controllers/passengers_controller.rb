@@ -36,6 +36,11 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+
+    @passenger.trips.each do |trip|
+      trip.destroy
+    end
+
     @passenger.destroy
     redirect_to passengers_path
   end

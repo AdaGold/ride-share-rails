@@ -24,11 +24,16 @@ class TripsController < ApplicationController
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
-
-    redirect_to passenger_path(params[:passenger_id])
+    if ! request.referer.include?( passenger_trip_path(@trip.passenger.id, @trip.id))
+      redirect_to request.referer
+    else
+      redirect_to passenger_path(@trip.passenger.id)
+    end
   end
 
   def new
+    @trip = Trip.new
+    @trip.passenger_id = params[:passenger_id].to_i
   end
 
   def create

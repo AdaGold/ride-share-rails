@@ -16,9 +16,15 @@
             <%= link_to driver.name, driver_path(driver.id) %>
           </h2>
         </section>
-        <section class="driver-rating small-2 large-4 columns">
+        <section class="driver-rating small-2 large-2 columns">
           <h3>
             Average Rating: <%= driver.average_rating %>
+          </h3>
+        </section>
+        <section class="driver-links small-2 large-2 columns">
+          <h3>
+            <%= link_to "Edit", edit_driver_path(driver.id) %>
+            <%= link_to "Delete", driver_path(driver.id), method: :delete %>
           </h3>
         </section>
       </section>

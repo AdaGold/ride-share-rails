@@ -8,7 +8,9 @@ class DriversController < ApplicationController
 
   def show;  end
 
-  def new;  end
+  def new
+    @driver = Driver.new
+  end
 
   def create
     driver = Driver.new(driver_params)

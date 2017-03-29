@@ -16,15 +16,16 @@
     <div class="small-6 columns">
       <%= f.label :driver_id, "Driver" %>
       <%= f.select(:driver_id) do %>
-        <% (Driver.all.collect { |d| [d.name, d.id]}).uniq.each do |driver| %>
-          <%= content_tag(:option, driver[0], value: driver[1], selected: driver[1].to_i == @trip.driver.id) %>
+        <% (Driver.all.order(:name).collect { |d| [d.name, d.id]}).uniq.each do |driver| %>
+          <%= content_tag(:option, driver[0], value: driver[1], selected: (@trip.driver != nil && driver[1].to_i == @trip.driver.id)) %>
         <% end %>
       <% end %>
     </div>
     <div class="small-6 columns">
+      <%# Don't let them change the passenger %>
       <%= f.label :passenger_id, "Passenger" %>
       <%= f.select(:passenger_id) do %>
-        <% (Passenger.all.collect { |p| [p.name, p.id]}).uniq.each do |passenger| %>
+        <% (Passenger.where(id: @trip.passenger.id).collect { |p| [p.name, p.id]}).uniq.each do |passenger| %>
           <%= content_tag(:option, passenger[0], value: passenger[1], selected: passenger[1].to_i == @trip.passenger.id) %>
         <% end %>
       <% end %>

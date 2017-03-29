@@ -1,2 +1,8 @@
-<h1>Trips#new</h1>
-<p>Find me in app/views/trips/new.html.erb</p>
+<section class="trip">
+  <section class="header" >
+    <h2 class="form-title">
+      Create a new Trip
+    </h2>
+  </section>
+  <%= render partial: "form", locals: {action_name: "Create", url: passenger_trips_path(@trip.passenger.id)} %>
+</section>
