@@ -80,9 +80,10 @@ However far you and your partner get, the application should have, at a minimum,
     - When viewing a passenger's details I can add a new trip
 	
 ### Investigating Trips
-  -  On a trip detail page I can view details of the trip and links to the driver and the passenger
-  -  On the trip details page I can choose to edit and delete details about the trip
-  -  On the trip details page I can change the driver & passenger for the trip
+On the trip details page
+  -  I can view details of the trip and links to the driver and the passenger
+  -  I can choose to edit and delete details about the trip
+  -  I can change the driver & passenger for the trip
 	
 
 ### Viewing Drivers
