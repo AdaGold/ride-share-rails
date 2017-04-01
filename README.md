@@ -10,12 +10,13 @@ This project is meant to be exploratory. Take time to try to dive into each piec
 
 ## Learning Goals
 This project should demonstrate you ability to:
-1.  Use CSV files to seed data into a rails app.
 1.  Create multiple related Active Record Models
 1.  Create models with validations and methods performing business logic
 1.  Craft effective RESTful routing
 1.  Work with a partner to create an attractive and functional Rails site
 1.  Practice Agile methodology
+1.  Use CSV files to seed data into a rails app.
+
 
 ## Best Practices
 - Use git relentlessly
