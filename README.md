@@ -74,7 +74,7 @@ However far you and your partner get, the application should have, at a minimum,
 - On the passenger list page I can click on a passenger to see that passenger's details
 - On the passenger's details page: 
     -  I can see a list of trips that passenger went on
-    - The passenger details page also shows the total amount the passenger has been charged
+    - Shows the total amount the passenger has been charged
     - Clicking on an individual trip will bring up details for the trip
     - On a passenger page I can edit and delete passengers
     - When viewing a passenger's details I can add a new trip
