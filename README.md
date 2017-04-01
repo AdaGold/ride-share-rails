@@ -63,7 +63,7 @@ However far you and your partner get, the application should have, at a minimum,
 ## User Stories
 
 ### Overall
-- From any page I can click a menu entry to create a new passenger.
+- From any page I can click a menu entry to create a new passenger
 - From any page I can click a menu entry to create a new driver
 - From any page I can click a menu entry to view a list of all passengers
 - From any page I can click a menu entry to view a list of all drivers
