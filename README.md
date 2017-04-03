@@ -76,11 +76,11 @@ However far you and your partner get, the application should have, at a minimum,
     -  I can see a list of trips that passenger went on
     - Shows the total amount the passenger has been charged
     - Clicking on an individual trip will bring up details for the trip
-    - On a specific passenger's page I can edit and delete passengers
+    - On a specific passenger's page I can edit and delete that passenger
     - When viewing a passenger's details I can add a new trip
-    	- When creating a new trip, an available driver is selected by the server automatically with no rating.
+    	- When creating a new trip, an available driver is selected by the server automatically with no rating
     	- A new trip cannot be created until all that passengers trips are rated.
-    - When viewing a passenger's trips you can assign a rating for the trip, 1-5.
+    - When viewing a passenger's trips you can assign a rating for the trip, 1-5
 	
 ### Investigating Trips
 On the trip details page
