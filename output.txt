@@ -1,0 +1,25 @@
+              Prefix Verb   URI Pattern                                    Controller#Action
+                root GET    /                                              homepages#index
+             drivers GET    /drivers(.:format)                             drivers#index
+                     POST   /drivers(.:format)                             drivers#create
+          new_driver GET    /drivers/new(.:format)                         drivers#new
+         edit_driver GET    /drivers/:id/edit(.:format)                    drivers#edit
+              driver GET    /drivers/:id(.:format)                         drivers#show
+                     PATCH  /drivers/:id(.:format)                         drivers#update
+                     PUT    /drivers/:id(.:format)                         drivers#update
+                     DELETE /drivers/:id(.:format)                         drivers#destroy
+ new_passenger_trips GET    /passengers/:passenger_id/trips/new(.:format)  trips#new
+edit_passenger_trips GET    /passengers/:passenger_id/trips/edit(.:format) trips#edit
+     passenger_trips GET    /passengers/:passenger_id/trips(.:format)      trips#show
+                     PATCH  /passengers/:passenger_id/trips(.:format)      trips#update
+                     PUT    /passengers/:passenger_id/trips(.:format)      trips#update
+                     DELETE /passengers/:passenger_id/trips(.:format)      trips#destroy
+                     POST   /passengers/:passenger_id/trips(.:format)      trips#create
+          passengers GET    /passengers(.:format)                          passengers#index
+                     POST   /passengers(.:format)                          passengers#create
+       new_passenger GET    /passengers/new(.:format)                      passengers#new
+      edit_passenger GET    /passengers/:id/edit(.:format)                 passengers#edit
+           passenger GET    /passengers/:id(.:format)                      passengers#show
+                     PATCH  /passengers/:id(.:format)                      passengers#update
+                     PUT    /passengers/:id(.:format)                      passengers#update
+                     DELETE /passengers/:id(.:format)                      passengers#destroy

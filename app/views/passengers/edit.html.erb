@@ -1,0 +1,8 @@
+<section class="passenger">
+  <section class="header" >
+    <h2 class="form-title">
+      Editing <%= @passenger.name %>
+    </h2>
+  </section>
+  <%= render partial: "form", locals: {action_name: "Update"} %>
+</section>

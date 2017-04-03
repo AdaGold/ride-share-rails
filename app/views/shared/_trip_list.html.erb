@@ -1,0 +1,68 @@
+
+<article class="trip-list table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th width="10%">
+          ID
+        </th>
+        <th width="10%">
+          Date
+        </th>
+        <th width="20%">
+          Driver
+        </th>
+        <th width="20%">
+          Passenger
+        </th>
+        <th width="10%">
+          Price
+        </th>
+        <th width="10%">
+          Rating
+        </th>
+        <th width="20%">
+          Delete Link
+        </th>
+      </tr>
+    </thead>
+    <% trips.each do |trip| %>
+      <tr>
+        <td>
+          <%= link_to trip.id.to_s, passenger_trip_path(trip.passenger.id, trip.id) %>
+        </td>
+        <td>
+          <p>
+            <%= trip.date %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+          </p>
+        </td>
+        <td>
+            <p>
+              <%= number_to_currency trip.price %>
+            </p>
+        </td>
+        <td>
+          <p>
+            <%= trip.rating %>
+          </p>
+        </td>
+        <td>
+          <p>
+            <%= link_to "Delete",  passenger_trip_path(trip.passenger.id, trip.id), method: :delete %>
+            <%= link_to "Edit", edit_passenger_trip_path(trip.passenger.id, trip.id) %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</article>

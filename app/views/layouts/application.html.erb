@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text"><%= link_to "Rideshare on Rails!", root_path %></li>
+      <li>
+        <a href="/drivers">Drivers</a>
+        <ul class="menu vertical">
+          <li><a href="/drivers/new">Add a Driver</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/passengers">Passengers</a>
+        <ul class="menu vertical">
+          <li>
+            <a href="/passengers/new">Add a Passenger</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<section class="trip-details row">
+  <h1>Trip #<%= @trip.id %></h1>
+  <%= render partial: "shared/trip_list", locals: {trips: [@trip]} %>
+</section>

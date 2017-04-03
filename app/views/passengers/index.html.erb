@@ -1,0 +1,27 @@
+<h1>Rideshare Passengers</h1>
+<article class="passenger-list">
+  <section class="row pagination-header">
+    <div class="large-12 small-12 columns">
+      <%= paginate @passengers %>
+    </div>
+  </section>
+    <% @passengers.each do |passenger| %>
+
+      <section class="passenger row">
+        <aside  class="small-2 large-2 columns">
+          <%= image_tag "http://www.fillmurray.com/50/50", alt: passenger.name, class: "passenger"%>
+        </aside>
+        <section class="passenger-name small-8 large-8 columns">
+          <h2>
+            <%= link_to passenger.name, passenger_path(passenger.id) %>
+          </h2>
+        </section>
+        <section class="passenger-links small-2 large-2 columns">
+          <h2>
+            <%= link_to "Edit", edit_passenger_path(passenger.id) %>
+            <%= link_to "delete", passenger_path(passenger.id), method: :delete %>
+          </h2>
+        </section>
+      </section>
+    <% end %>
+</article>

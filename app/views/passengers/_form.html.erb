@@ -1,0 +1,19 @@
+<section class="passenger form">
+  <%= form_for @passenger do |f| %>
+    <div class="row">
+      <div class="small-6 columns">
+        <%= f.label :name, "Passenger Name:  " %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.label :phone_number, "Phone Number" %>
+        <%= f.text_field :phone_number %>
+      </div>
+    </div>
+  <div class="row">
+    <div class="submit-btn small-12 columns">
+      <%= f.submit action_name %>
+    </div>
+  </div>
+<% end %>
+</section>

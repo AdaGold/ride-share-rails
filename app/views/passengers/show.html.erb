@@ -1,0 +1,20 @@
+<section class="row passenger-header">
+  <section class="column small-2">
+    <%= image_tag "http://www.fillmurray.com/50/50", alt: @passenger.name, class: "passenger"%>
+  </section>
+  <section class="column small-6">
+    <h2><%= @passenger.name %></h1>
+  </section>
+  <section class="column small-4">
+    <h2> Phone #: <%= @passenger.phone_number %></h2>
+  </section>
+</section>
+<section class="trip-details row">
+  <h2>Trips</h2>
+  <%= render partial: "shared/trip_list", locals: {trips: @passenger.trips.order(:date)} %>
+  <h2><%= link_to "Add a New Trip", new_passenger_trip_path(@passenger.id) %></h2>
+</section>
+<p>
+  <%= link_to "Edit", edit_passenger_path(@passenger.id) %>
+  <%= link_to "Delete", passenger_path(@passenger.id), method: :delete %>
+</p>

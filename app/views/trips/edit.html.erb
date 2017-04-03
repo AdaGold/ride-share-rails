@@ -1,0 +1,8 @@
+<section class="trip">
+  <section class="header" >
+    <h2 class="form-title">
+      Editing Trip #: <%= @trip.id %>
+    </h2>
+  </section>
+  <%= render partial: "form", locals: {action_name: "Update", url: passenger_trip_path(@trip.passenger.id, @trip.id)} %>
+</section>

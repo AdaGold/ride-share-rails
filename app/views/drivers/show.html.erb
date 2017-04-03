@@ -1,0 +1,11 @@
+<h1>Driver: <%= @driver.name %></h1>
+<h2> Car: <%= @driver.make_and_model %></h2>
+<h2>Average Rating: <%= @driver.average_rating %></h2>
+<section class="trip-details row">
+  <h2>Driver Trips</h2>
+  <%= render partial: "shared/trip_list", locals: {trips: @driver.trips.order(:date)} %>
+</section>
+<p>
+  <%= link_to "Edit", edit_driver_path(@driver.id) %>
+  <%= link_to "Delete", driver_path(@driver.id), method: :delete %>
+</p>
