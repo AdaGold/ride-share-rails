@@ -92,7 +92,7 @@ On the trip details page
   - On the driver index page I can click on an individual driver to see that person's details
   - On the driver details page, I can see a list of trips that driver made
     - Clicking on an individual trip will bring up details for the trip
-    - The driver details page will als show the driver's total earnings (total of each trip minus 15%)
+    - The driver details page will also show the driver's total earnings (total of each trip minus 15%)
   - The driver list and driver details pages show the driver's average rating
   - On the drivers page I can create, edit and delete drivers
 
