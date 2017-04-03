@@ -4,7 +4,7 @@
 | Feature | Feedback    |
 | :------------- | :------------- |
 |  **Baseline** |   |
-|   Appropriate Git Usage with no extraneous files checked in and both partners contributing	|   	|
+| Appropriate Git Usage with no extraneous files checked in and both partners contributing	|   	|
 | Uses named routes (like `_path`) |   |
 | RESTful routes utilized |   |
 | Answered comprehension questions	|   	|
