@@ -9,9 +9,9 @@
 | RESTful routes utilized |   |
 |   Answered comprehension questions	|   	|
 | **Rideshare Rails Specific Content** |   | 
-| Table relationships Passenger-->Trip and Driver-->Trip |   |
+| Table relationships  |   |
 | Validation rules for Passenger, Trip & Driver includes required fields and ratings |   |
-| Business logic is in the model classes, average rating, total earnings etc |   |
+| Business logic is in the model classes |   |
 | Database is seeded from the CSV files | | 
 | Trello board is created and utilized in project management |   |
 | Postgres database is used |   |
