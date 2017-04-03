@@ -5,14 +5,14 @@
 | :------------- | :------------- |
 |  **Baseline** |   |
 | Appropriate Git Usage with no extraneous files checked in and both partners contributing	|   	|
+| Answered comprehension questions	|   	|
 | Uses named routes (like `_path`) |   |
 | RESTful routes utilized |   |
-| Answered comprehension questions	|   	|
-| **Rideshare Rails Specific Content** |   | 
+| **Rideshare Rails Specific Content** |   |
 | Table relationships  |   |
 | Validation rules for Models |   |
-| Business logic is in the model classes |   |
-| Database is seeded from the CSV files | | 
+| Business logic is in the models |   |
+| Database is seeded from the CSV files | |
 | Trello board is created and utilized in project management |   |
 | Postgres database is used |   |
 | Heroku instance is online |   |

@@ -1,11 +1,12 @@
-# Rideshare-Rails 
-Congratulations! You're submitting your assignment! 
+# Rideshare-Rails
+Congratulations! You're submitting your assignment! These comprehension questions should be answered by both partners together, not by a single teammate.
 
-## Comprehension Questions 
-| Question | Answer    | 
+## Comprehension Questions
+| Question | Answer    |
 | :------------- | :------------- |
-| Describe in your own words the types of entity relationships you have in your project and why you choose to have them related in that fashion |    |
-| Describe how your teams organized your sprint |    | 
-| Explain the role model validations perform in your application. |  | 
-| What features did you choose to prioritize in your project, and what features, if any, did you have to set aside to meet the deadline. |   |  
-| What is the heroku address of your app |        | 
+| Describe the types of entity relationships you set up in your project and why you set up the relationships that way |    |
+| Describe the role of model validations in your application |  |
+| How did your team break up the work to be done? |    |
+| What features did you choose to prioritize in your project, and what features, if any, did you have to set aside to meet the deadline? |   |
+| What was one thing that your team collectively gained more clarity on after completing this assignment? |     |
+| What is the Heroku URL of your deployed application |        |
