@@ -7,7 +7,7 @@
 |   Appropriate Git Usage with no extraneous files checked in and both partners contributing	|   	|
 | Uses named routes (like `_path`) |   |
 | RESTful routes utilized |   |
-|   Answered comprehension questions	|   	|
+| Answered comprehension questions	|   	|
 | **Rideshare Rails Specific Content** |   | 
 | Table relationships  |   |
 | Validation rules for Models |   |
