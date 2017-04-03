@@ -78,12 +78,16 @@ However far you and your partner get, the application should have, at a minimum,
     - Clicking on an individual trip will bring up details for the trip
     - On a specific passenger's page I can edit and delete passengers
     - When viewing a passenger's details I can add a new trip
+    	- When creating a new trip, an available driver is selected by the server automatically.
+    	- A newly created trip will have a status of `pickup`.  
+    - When viewing a passenger's trips you can assign a rating for the trip, 1-5.
 	
 ### Investigating Trips
 On the trip details page
   -  I can view details of the trip and links to the driver and the passenger
   -  I can choose to edit and delete details about the trip
   -  I can change the driver & passenger for the trip
+  -  Trips can have the status **pickup**, **travel**, and **complete**.
 	
 
 ### Viewing Drivers
@@ -94,5 +98,8 @@ On the trip details page
     - The driver details page will als show the driver's total earnings (total of each trip minus 15%)
   - The driver list and driver details pages show the driver's average rating
   - On the drivers page I can create, edit and delete drivers
+  - Drivers can have a status of, **available**, **booked** or **unavailable**.  
+  - On a driver's show page you can change the status of any trip from **pickup** to **travel** and any trip in status **travel** to **complete**.
+  	- A driver can only have one trip which is incomplete.
 
 
