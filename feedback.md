@@ -10,7 +10,7 @@
 |   Answered comprehension questions	|   	|
 | **Rideshare Rails Specific Content** |   | 
 | Table relationships  |   |
-| Validation rules for Passenger, Trip & Driver includes required fields and ratings |   |
+| Validation rules for Models |   |
 | Business logic is in the model classes |   |
 | Database is seeded from the CSV files | | 
 | Trello board is created and utilized in project management |   |
