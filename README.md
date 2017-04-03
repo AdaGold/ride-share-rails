@@ -79,7 +79,7 @@ However far you and your partner get, the application should have, at a minimum,
     - On a specific passenger's page I can edit and delete passengers
     - When viewing a passenger's details I can add a new trip
     	- When creating a new trip, an available driver is selected by the server automatically.
-    	- A newly created trip will have a status of `pickup`.  
+    	- A newly created trip will have a status of **pickup**.  
     - When viewing a passenger's trips you can assign a rating for the trip, 1-5.
 	
 ### Investigating Trips
