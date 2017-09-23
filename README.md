@@ -2,7 +2,9 @@
 
 In this application you will build a website to model a small community ridesharing app.
 
-In this implementation we'll be seeding with static data, and also building a tool to allow passengers or new drivers to sign up and add their own data.
+There will be two main pieces of functionality:
+- New passengers and drivers can sign up for the service
+- Existing passengers can request new trips and rate past ones
 
 As you are using ActiveRecord to access the database compare the methods that are given to those you had to create in the CSV implementation of Ride Share 2.
 
@@ -10,12 +12,12 @@ This project is meant to be exploratory. Take time to try to dive into each piec
 
 ## Learning Goals
 This project should demonstrate you ability to:
-1.  Create multiple related Active Record Models
-1.  Create models with validations and methods performing business logic
-1.  Craft effective RESTful routing
-1.  Work with a partner to create an attractive and functional Rails site
-1.  Practice Agile methodology
-1.  Use CSV files to seed data into a rails app.
+1. Create multiple related Active Record Models
+1. Create models with validations and methods performing business logic
+1. Craft effective RESTful routing
+1. Work with a partner to create an attractive and functional Rails site
+1. Practice Agile methodology
+1. Use CSV files to seed data into a rails app.
 
 
 ## Best Practices
@@ -65,12 +67,12 @@ This is the recommended way to configure this project, but not a hard requiremen
 
 ## Things to Keep in Mind
 
-1.  Try to include useful business logic in your model classes.
-1.  You can include nested routes, but avoid routes that are more than 2-levels deep.
-1.  Use Semantic HTML
-1.  Make good use of partial views
-1.  Don't forget validations! (can a trip exist without a driver or passenger...)
-1.  You may not be able to get all the user stories done.  **Prioritize!** 
+1. Try to include useful business logic in your model classes.
+1. You can include nested routes, but avoid routes that are more than 2-levels deep.
+1. Use Semantic HTML
+1. Make good use of partial views
+1. Don't forget validations! (can a trip exist without a driver or passenger...)
+1. You may not be able to get all the user stories done. **Prioritize!**
 
 ## User Stories
 
@@ -84,7 +86,7 @@ This is the recommended way to configure this project, but not a hard requiremen
 ### Viewing Passengers
 
 - On the passenger list page I can click on a passenger to see that passenger's details
-- On the passenger's details page: 
+- On the passenger's details page:
     -  I can see a list of trips that passenger went on
     - Shows the total amount the passenger has been charged
     - Clicking on an individual trip will bring up details for the trip
@@ -95,11 +97,11 @@ This is the recommended way to configure this project, but not a hard requiremen
     		- The trip starts with no rating
     	- A new trip cannot be created until all that passengers trips are rated.
     - When viewing a passenger's trips you can assign a rating for the trip, 1-5
-	
+
 ### Investigating Trips
 On the trip details page
   -  I can view details of the trip and links to the driver and the passenger
-  -  I can choose to edit and delete details about the trip	
+  -  I can choose to edit and delete details about the trip
 
 ### Viewing Drivers
   - From any page I can click a menu entry to be taken to the driver index page and see a list of all the drivers
@@ -109,5 +111,3 @@ On the trip details page
     - The driver details page will also show the driver's total earnings (total of each trip minus 15%)
   - The driver list and driver details pages show the driver's average rating
   - On the drivers page I can create, edit and delete drivers
-
-
