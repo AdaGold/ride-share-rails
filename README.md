@@ -83,9 +83,21 @@ This is the recommended way to configure this project, but not a hard requiremen
     - Validations are useful for making sure your database records are sane, and you should make use of them on this project
     - It is easy to validate too much! If it's not a hard requirement for your app to function, it probably shouldn't be a validation.
     - If validations fail, let the user know why
-1. You may not be able to get all the user stories done. **Prioritize!**
 
 ## User Stories
+
+This project has a lot of user stories, and it is likely you and your partner won't get to all of them. Here is our prioritized list of what's important for this project, based on this week's learning goals:
+
+1. CRUD operations on models with relations
+    - Creating new trips
+1. Model validations and reporting errors to the user
+1. Deployment
+1. Basic layout of a complex Rails app
+1. Complex business logic
+    - Driver earning and average rating
+1. Styling and design
+
+Please use this list as you decide what to work on (or at the end of the week as you decide what features to cut).
 
 ### Overall
 
@@ -110,7 +122,6 @@ This is the recommended way to configure this project, but not a hard requiremen
 - When adding a new passenger:
   - The user must provide a name and phone number
   - Don't worry about how the phone number is formatted
-
 
 ### Working with Drivers
 
