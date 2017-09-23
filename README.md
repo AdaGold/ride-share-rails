@@ -39,17 +39,29 @@ Once the above is complete, this project:
 - Requires you to create a Rails application which
   - Conforms to Rails conventions on naming and inflection
   - Is created by using `rails new .` you will create a new rails app _inside_ of the fork folder instead of creating a _new_ folder for your rails app
-  - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as it's database.
+    - `rails new` will ask if you want to overwrite the existing files `README.md` and `db/seeds.rb`. Answer `n` to both of these (keep the existing file)
+  - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as its database.
 
 **Your team shall submit a pull request with a link to your Trello board once you are done with the baseline which shall be reviewed before moving onto implementing the requirements**
 
 ## Minimum Requirements
 However far you and your partner get, the application should have, at a minimum, the following features:
-- Seeded data in your database from the original CSV files
+- Seeded data in your database from the original CSV files (see below)
 - Multiple, related, Active Record models
 - [RESTful routing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/mvc-and-restful-routing.md)
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
 - A "look and feel" that will make you and your partner happy!
+
+### Seeding the Database
+
+We have provided sample data for your site in the form of CSV files. These files are located in the directory `db/seed_data/`. We have also provided a seed script, `db/seeds.rb`, to load these files into your database.
+
+`db/seeds.rb` assumes a few things about how your database is set up:
+- There are `Driver`, `Passenger` and `Trip` models
+- These models are related in a certain way
+- The field names of these models match the column names in the CSV files
+
+This is the recommended way to configure this project, but not a hard requirement. If you've got a good reason to change the setup, feel free to edit `db/seeds.rb` accordingly.
 
 ## Things to Keep in Mind
 
