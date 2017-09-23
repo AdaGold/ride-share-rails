@@ -3,15 +3,15 @@
 In this application you will build a website to model a small community ridesharing app.
 
 There will be two main pieces of functionality:
-- New passengers and drivers can sign up for the service
-- Existing passengers can request new trips and rate past ones
-
-As you are using ActiveRecord to access the database compare the methods that are given to those you had to create in the CSV implementation of Ride Share 2.
+- New passengers and drivers can sign up for the service and review their information
+- Passengers can request and rate trips, and drivers can see their aggregated statistics
 
 This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your partner can create the waves yourself based on the dependencies of the requirements given.
 
 ## Learning Goals
+
 This project should demonstrate you ability to:
+
 1. Create multiple related Active Record Models
 1. Create models with validations and methods performing business logic
 1. Craft effective RESTful routing
@@ -19,12 +19,8 @@ This project should demonstrate you ability to:
 1. Practice Agile methodology
 1. Use CSV files to seed data into a rails app.
 
-
-## Best Practices
-- Use git relentlessly
-- Pair program on difficult problems and to share learning experiences
-
 ## Baseline
+
 Before you start writing _any_ code:
 
 - Review the requirements with your partner
@@ -33,7 +29,7 @@ Before you start writing _any_ code:
   - Discuss who will do which tasks and when you will target completion
     - What things should be done together as pairs vs individually?
   - Organize your tasks/stories into iterations (a.k.a waves)
-- Create a data diagram based on the original data [specification](https://github.com/adagold/ride-share-two)
+- Create a data diagram based on the data in the CSV files
 
 Once the above is complete, this project:
 
@@ -47,9 +43,11 @@ Once the above is complete, this project:
 **Your team shall submit a pull request with a link to your Trello board once you are done with the baseline which shall be reviewed before moving onto implementing the requirements**
 
 ## Minimum Requirements
+
 However far you and your partner get, the application should have, at a minimum, the following features:
+
 - Seeded data in your database from the original CSV files (see below)
-- Multiple, related, Active Record models
+- Multiple related Active Record models
 - [RESTful routing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/mvc-and-restful-routing.md)
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
 - A "look and feel" that will make you and your partner happy!
@@ -59,16 +57,19 @@ However far you and your partner get, the application should have, at a minimum,
 We have provided sample data for your site in the form of CSV files. These files are located in the directory `db/seed_data/`. We have also provided a seed script, `db/seeds.rb`, to load these files into your database.
 
 `db/seeds.rb` assumes a few things about how your database is set up:
+
 - There are `Driver`, `Passenger` and `Trip` models
 - These models are related in a certain way
 - The field names of these models match the column names in the CSV files
 
 This is the recommended way to configure this project, but not a hard requirement. If you've got a good reason to change the setup, feel free to edit `db/seeds.rb` accordingly.
 
-## Things to Keep in Mind
+### Things to Keep in Mind
 
-1. Try to include useful business logic in your model classes.
-1. You can include nested routes, but avoid routes that are more than 2-levels deep.
+1. Use git relentlessly
+1. Pair program on difficult problems and to share learning experiences
+1. Try to place business logic in your model classes
+1. You will probably need nested routes, but avoid routes that are more than 2 levels deep
 1. Use Semantic HTML
 1. Make good use of partial views
 1. Don't forget validations! (can a trip exist without a driver or passenger...)
@@ -77,11 +78,11 @@ This is the recommended way to configure this project, but not a hard requiremen
 ## User Stories
 
 ### Overall
+
 - From any page I can click a menu entry to create a new passenger
 - From any page I can click a menu entry to create a new driver
 - From any page I can click a menu entry to view a list of all passengers
 - From any page I can click a menu entry to view a list of all drivers
-
 
 ### Viewing Passengers
 
@@ -99,15 +100,18 @@ This is the recommended way to configure this project, but not a hard requiremen
     - When viewing a passenger's trips you can assign a rating for the trip, 1-5
 
 ### Investigating Trips
+
 On the trip details page
-  -  I can view details of the trip and links to the driver and the passenger
-  -  I can choose to edit and delete details about the trip
+
+-  I can view details of the trip and links to the driver and the passenger
+-  I can choose to edit and delete details about the trip
 
 ### Viewing Drivers
-  - From any page I can click a menu entry to be taken to the driver index page and see a list of all the drivers
-  - On the driver index page I can click on an individual driver to see that person's details
-  - On the driver details page, I can see a list of trips that driver made
-    - Clicking on an individual trip will bring up details for the trip
-    - The driver details page will also show the driver's total earnings (total of each trip minus 15%)
-  - The driver list and driver details pages show the driver's average rating
-  - On the drivers page I can create, edit and delete drivers
+
+- From any page I can click a menu entry to be taken to the driver index page and see a list of all the drivers
+- On the driver index page I can click on an individual driver to see that person's details
+- On the driver details page, I can see a list of trips that driver made
+  - Clicking on an individual trip will bring up details for the trip
+  - The driver details page will also show the driver's total earnings (total of each trip minus 15%)
+- The driver list and driver details pages show the driver's average rating
+- On the drivers page I can create, edit and delete drivers
