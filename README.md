@@ -74,7 +74,7 @@ This is the recommended way to configure this project, but not a hard requiremen
 
 1. Use git relentlessly
 1. Pair program on difficult problems and to share learning experiences
-1. Deploy early (Wednesday), deploy often.
+1. Deploy early (two days before submission), deploy often.
 1. Business logic should be implemented in the model
 1. You will probably need nested routes, but avoid routes that are more than 2 levels deep
 1. Use Semantic HTML
@@ -91,8 +91,8 @@ This project has a lot of user stories, and it is likely you and your partner wo
 1. CRUD operations on models with relations
     - Creating new trips
 1. Model validations and reporting errors to the user
+1. Basic structure of a complex Rails app
 1. Deployment
-1. Basic layout of a complex Rails app
 1. Complex business logic
     - Driver earning and average rating
 1. Styling and design
