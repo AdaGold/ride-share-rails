@@ -14,7 +14,7 @@ This project is meant to be exploratory. Take time to try to dive into each piec
 
 ## Learning Goals
 
-This project should demonstrate you ability to:
+This project should demonstrate your ability to:
 
 1. Create multiple related Active Record Models
 1. Create models with validations and methods performing business logic
