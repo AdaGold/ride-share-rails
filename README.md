@@ -116,6 +116,7 @@ Please use this list as you decide what to work on (or at the end of the week as
   - See a list of trips that passenger went on
     - Clicking on a trip from the list will take me to a detail page for that trip
   - Click links to edit and delete that passenger
+    - It is up to you and your pair on how to deal with "validations" surrounding deleting a passenger associated with a trip
   - Add a new trip for this passenger
     - An available driver is selected by the server
     - The trip starts with no rating
@@ -132,6 +133,7 @@ Please use this list as you decide what to work on (or at the end of the week as
   - See a list of trips this driver has driven
     - Clicking on a trip from the list will take me to a detail page for that trip
     - Click links to edit and delete that driver
+       - It is up to you and your pair on how to deal with "validations" surrounding deleting a passenger associated with a trip
 - When creating a new driver:
   - The user must provide a name and VIN
   - Don't worry about how the VIN is formatted
