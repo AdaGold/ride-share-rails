@@ -146,3 +146,6 @@ On the trip details page I can...
 - Assign a rating (1-5) to the trip, if it does not already have one
 - Click links to detail pages for the trip's driver and passenger
 - Click links to edit and delete the trip
+
+## What we're looking for
+You can find what instructors will be looking for in the [feedback](feedback.md) markdown document. 
