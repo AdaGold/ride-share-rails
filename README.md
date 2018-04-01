@@ -172,7 +172,7 @@ Add a Passenger:
 
 Passenger List:
 
-![Passenger List](images/Rideshare-Rails-Wireframe-passengers-index.png)
+![Passenger List](images/Rideshare-Rails-Wireframe-passengers-index-page.png)
 
 Passenger Show Page:
 
