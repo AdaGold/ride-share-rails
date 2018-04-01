@@ -118,7 +118,7 @@ Please use this list as you decide what to work on (or at the end of the week as
   - Click links to edit and delete that passenger
     - It is up to you and your pair on how to deal with "validations" surrounding deleting a passenger associated with a trip
   - Add a new trip for this passenger
-    - An available driver is selected by the server
+    - An available driver is selected automatically by the server
     - The trip starts with no rating
 - When adding a new passenger:
   - The user must provide a name and phone number
@@ -128,7 +128,8 @@ Please use this list as you decide what to work on (or at the end of the week as
 
 - On the driver list page I can click on a driver to see that driver's details
 - On the driver's details page I can...
-  - See the driver's total earnings (total of each trip minus 15%)
+  - See the driver's total earnings
+    - The driver gets 80% of the trip cost after a fee of $1.65 is subtracted
   - See the driver's average rating
   - See a list of trips this driver has driven
     - Clicking on a trip from the list will take me to a detail page for that trip
