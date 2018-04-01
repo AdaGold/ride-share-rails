@@ -151,27 +151,35 @@ On the trip details page I can...
 ## Wireframes
 
 Homepage:
+
 ![Homepage](images/Rideshare-Rails-Wireframe-homepage.png)
 
 Add a Driver:
+
 ![Add A Driver](images/Rideshare-Rails-Wireframe-add-driver.png)
 
 Drivers List:
+
 ![Driver List](images/Rideshare-Rails-Wireframe-drivers-index.png)
 
 Driver Show Page:
+
 ![Driver Show Page](images/Rideshare-Rails-Wireframe-show-driver.png)
 
 Add a Passenger:
+
 ![Add a Passenger](images/Rideshare-Rails-Wireframe-add-passenger.png)
 
 Passenger List:
+
 ![Passenger List](images/Rideshare-Rails-Wireframe-passengers-index.png)
 
 Passenger Show Page:
+
 ![Passenger Show Page](images/Rideshare-Rails-Wireframe-show-passenger.png)
 
 Trip Details:
+
 ![Trip Details Page](images/Rideshare-Rails-Wireframe-trip-details.png)
 
 
