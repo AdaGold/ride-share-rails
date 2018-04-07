@@ -4,7 +4,7 @@
 
 In this project you will build a website to model a small community ridesharing app.
 
-This is a [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md) pair project.
+This is a [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md) pair project. It is due EOD on Friday 4/6/2018.
 
 There will be two main pieces of functionality:
 - New passengers and drivers can sign up for the service and review their information
