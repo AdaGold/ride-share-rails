@@ -34,7 +34,7 @@ Before you start writing _any_ code:
 - High five your team
 - Discuss communication style/feedback style with your team
 - Review the requirements with your team
-- If there are any instructions, follow any instructions that your instructors may give you directions on joining a specific Trello team/organization
+- Follow any instructions given to the class regarding joining a specific Trello team/organization
 - Create a Trello board (in the correct team/org if applicable)
   - Write and organize tasks/stories
   - Prioritize tasks/stories
@@ -67,7 +67,7 @@ However far you and your partner get, the application should have, at a minimum,
 
 1. Use git relentlessly
 1. Pair program on difficult problems and to share learning experiences
-1. Deploy early (two days before submission) and deploy often
+1. Don't leave deployment to the last second-- it will take longer than you anticipate
 1. Business logic should be implemented in the model
 1. You will probably need nested routes, but avoid routes that are more than 2 levels deep
 1. Use semantic HTML
