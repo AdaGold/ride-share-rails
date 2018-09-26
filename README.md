@@ -1,10 +1,12 @@
 # Rideshare Rails
 
-## Introduction
+## At a Glance
+- Pair, [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md#stage-2) project
+- Due EOD **DATE HERE**
 
-In this project you will build a website to model a small community ridesharing app.
+## Introduction & Objective
 
-This is a [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md) pair project.
+In this project you will build a website to model a small community Rideshare app in Rails
 
 There will be two main pieces of functionality:
 - New passengers and drivers can sign up for the service and review their information
@@ -29,13 +31,16 @@ This project should demonstrate your ability to:
 
 Before you start writing _any_ code:
 
-- Review the requirements with your partner
-- Create a Trello board
-  - Organize your tasks/stories
-  - Discuss who will do which tasks and when you will target completion
+- High five your team
+- Discuss communication style/feedback style with your team
+- Review the requirements with your team
+- If there are any instructions, follow any instructions that your instructors may give you directions on joining a specific Trello team/organization
+- Create a Trello board (in the correct team/org if applicable)
+  - Write and organize tasks/stories
+  - Prioritize tasks/stories
+  - Discuss who is interested in which tasks and any scheduling considerations
     - What things should be done together as pairs vs individually?
-  - Organize your tasks/stories into iterations (a.k.a waves)
-- Create a data diagram based on the data in the CSV files
+- Create a diagram based on the data in the CSV files
 
 Once the above is complete, this project:
 
@@ -43,10 +48,10 @@ Once the above is complete, this project:
 - Requires you to create a Rails application which
   - Conforms to Rails conventions on naming and inflection
   - Is created by using `rails new .` you will create a new rails app _inside_ of the fork folder instead of creating a _new_ folder for your rails app
-    - `rails new` will ask if you want to overwrite the existing files `README.md` and `db/seeds.rb`. Answer `n` to both of these (keep the existing file)
-  - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as its database.
+    - `rails new .` will ask if you want to overwrite the existing files `README.md` and `db/seeds.rb`. Answer `n` to both of these (keep the existing file)
+  - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as its database. (This should already be configured correctly if you followed our Ada Install Fest for Rails)
 
-**Your team shall submit a pull request with a link to your Trello board once you are done with this initial setup. This must be reviewed by an instructor before you may begin implementing the requirements.**
+**Your team shall submit a pull request with a link to your Trello board once you are done with this initial setup. Your team must message your instructors and notify them that your board is ready for review.**
 
 ### Minimum Requirements
 
@@ -57,6 +62,24 @@ However far you and your partner get, the application should have, at a minimum,
 - [RESTful routing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/mvc-and-restful-routing.md)
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
 - A "look and feel" that will make you and your partner happy!
+
+### Things to Keep in Mind
+
+1. Use git relentlessly
+1. Pair program on difficult problems and to share learning experiences
+1. Deploy early (two days before submission) and deploy often
+1. Business logic should be implemented in the model
+1. You will probably need nested routes, but avoid routes that are more than 2 levels deep
+1. Use semantic HTML
+1. Make good use of partial views
+1. Regarding validations:
+    - Validations are useful for making sure your database records are sane, and you should make use of them on this project
+    - It is easy to validate too much! If it's not a hard requirement for your app to function, it probably shouldn't be a validation
+    - If validations fail, let the user know why
+
+### Wireframes
+
+We have provided some wireframes below; they are optional to use for executing layout. However, they should provide guidance for what views and information we instructors are expecting to see and interact with as we grade.
 
 ### Seeding the Database
 
@@ -70,19 +93,9 @@ We have provided sample data for your site in the form of CSV files. These files
 
 This is the recommended way to configure this project, but not a hard requirement. If you've got a good reason to change the setup, feel free to edit `db/seeds.rb` accordingly.
 
-### Things to Keep in Mind
+---
 
-1. Use git relentlessly
-1. Pair program on difficult problems and to share learning experiences
-1. Deploy early (two days before submission), deploy often.
-1. Business logic should be implemented in the model
-1. You will probably need nested routes, but avoid routes that are more than 2 levels deep
-1. Use Semantic HTML
-1. Make good use of partial views
-1. Regarding validations:
-    - Validations are useful for making sure your database records are sane, and you should make use of them on this project
-    - It is easy to validate too much! If it's not a hard requirement for your app to function, it probably shouldn't be a validation.
-    - If validations fail, let the user know why
+# Requirements
 
 ## User Stories
 
@@ -182,6 +195,8 @@ Trip Details:
 
 ![Trip Details Page](images/Rideshare-Rails-Wireframe-trip-details.png)
 
+
+---
 
 ## What we're looking for
 You can find what instructors will be looking for in the [feedback](feedback.md) markdown document.
