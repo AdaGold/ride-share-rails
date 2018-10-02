@@ -51,7 +51,7 @@ Once the above is complete, this project:
     - `rails new .` will ask if you want to overwrite the existing files `README.md` and `db/seeds.rb`. Answer `n` to both of these (keep the existing file)
   - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as its database. (This should already be configured correctly if you followed our Ada Install Fest for Rails)
 
-**Your team shall submit a pull request with a link to your Trello board once you are done with this initial setup. Your team must message your instructors and notify them that your board is ready for review.**
+**Your team should message your instructors and notify them that your board is ready for review.**
 
 ### Minimum Requirements
 
