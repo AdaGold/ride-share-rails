@@ -14,7 +14,6 @@ Validation rules for Models |
 Business logic is in the models |
 Database is seeded from the CSV files |
 Trello board is created and utilized in project management |
-Postgres database is used |
 Heroku instance is online |
 The app is styled to create an attractive user interface |
 **Overall** |
