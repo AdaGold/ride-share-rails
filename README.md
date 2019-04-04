@@ -63,7 +63,7 @@ However far you and your partner get, the application should have, at a minimum,
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
 - A "look and feel" that will make you and your partner happy!
 - Your application must have controller & model tests written
-  - Your model tests should include tests for validations and any custom methods
+  - Your model tests should include tests for validations, relationships and any custom methods
   - We have provided a set of sample tests that you can use as a starting place for the `Driver` and `Passenger` models.  We have also provided a scaffolding for the `Trip` model.  You should feel free to adapt the tests to meet your design.
   - You will also need to write tests for your controller actions.
 
