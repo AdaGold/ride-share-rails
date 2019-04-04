@@ -12,9 +12,11 @@ RESTful routes utilized |
 Table relationships |
 Validation rules for Models |
 Business logic is in the models |
+Tests for validations | 
+Tests for relationships | 
+Tests for custom model methods |
 Database is seeded from the CSV files |
 Trello board is created and utilized in project management |
-Postgres database is used |
 Heroku instance is online |
 The app is styled to create an attractive user interface |
 **Overall** |
