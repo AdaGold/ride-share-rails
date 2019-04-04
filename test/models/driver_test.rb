@@ -22,8 +22,10 @@ describe Driver do
 
   describe "relationships" do
     it "can have many trips" do
+      # Arrange
       driver = Driver.first
 
+      # Assert
       expect(driver.trips.count).must_be :>=, 0
       driver.trips.each do |trip|
         expect(trip).must_be_instance_of Trip

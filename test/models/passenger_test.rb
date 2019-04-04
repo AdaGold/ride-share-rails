@@ -21,8 +21,10 @@ describe Passenger do
 
   describe "relationships" do
     it "can have many trips" do
+      # Arrange
       passenger = Passenger.first
 
+      # Assert
       expect(passenger.trips.count).must_be :>, 0
       passenger.trips.each do |trip|
         expect(trip).must_be_instance_of Trip
