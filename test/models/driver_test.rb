@@ -12,6 +12,7 @@ describe Driver do
 
   it "will have the required fields" do
     # Arrange
+    new_driver.save
     driver = Driver.first
     [:name, :vin, :active, :car_make, :car_model].each do |field|
 
@@ -23,6 +24,7 @@ describe Driver do
   describe "relationships" do
     it "can have many trips" do
       # Arrange
+      new_driver.save
       driver = Driver.first
 
       # Assert
