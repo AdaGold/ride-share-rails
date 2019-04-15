@@ -6,13 +6,12 @@
 
 ## Introduction & Objective
 
-In this project you will build a website to model a small community Rideshare app in Rails
+A small community just created a Rideshare program for its local area. This project is to build a Rails app that manages that Rideshare program.
 
-There will be two main pieces of functionality:
+The community needs the following main pieces of functionality:
 - New passengers and drivers can sign up for the service and review their information
-- Passengers can request and rate trips, and drivers can see their aggregated statistics
-
-This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your partner can create the waves yourself based on the dependencies of the requirements given.
+- Passengers can request and rate trips
+- Drivers can see their aggregated statistics
 
 ## Learning Goals
 
@@ -23,51 +22,53 @@ This project should demonstrate your ability to:
 1. Craft effective RESTful routing
 1. Work with a partner to create an attractive and functional Rails site
 1. Practice Agile methodology
-1. Work with a large amount of existing data in a rails app
+1. Work with a large amount of existing data in a Rails app
 
-## Baseline
+## Objective
 
-### Initial Setup
+This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your team can create the waves yourself based on the dependencies of the requirements given.
+
+## Getting Started
 
 Before you start writing _any_ code:
 
 - High five your team
 - Discuss communication style/feedback style with your team
 - Review the requirements with your team
-- Follow any instructions given to the class regarding joining a specific Trello team/organization
-- Create a Trello board (in the correct team/org if applicable)
+- Create a Trello board
+  - Ensure all team members can manage the board
   - Write and organize tasks/stories
   - Prioritize tasks/stories
   - Discuss who is interested in which tasks and any scheduling considerations
     - What things should be done together as pairs vs individually?
 - Create a diagram based on the data in the CSV files
 
+## Setup Requirements
+
 Once the above is complete, this project:
 
-- Requires a shared repo with your partner as a collaborator
-- Requires you to create a Rails application which
+- Requires a shared repo with all team members as collaborators
+- Requires the team to create a Rails application which
   - Conforms to Rails conventions on naming and inflection
-  - Is created by using `rails new .` you will create a new rails app _inside_ of the fork folder instead of creating a _new_ folder for your rails app
+  - Is created by using `rails new .`. You will create a new rails app _inside_ of the fork folder instead of creating a _new_ folder for your rails app
     - `rails new .` will ask if you want to overwrite the existing files `README.md` and `db/seeds.rb`. Answer `n` to both of these (keep the existing file)
   - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as its database. (This should already be configured correctly if you followed our Ada Install Fest for Rails)
 
-**Your team should message your instructors and notify them that your board is ready for review.**
-
-### Minimum Requirements
+## Baseline Requirements
 
 However far you and your partner get, the application should have, at a minimum, the following features:
 
 - Seeded data in your database from the original CSV files (see below)
 - Multiple related Active Record models
 - [RESTful routing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/mvc-and-restful-routing.md)
+- A "look and feel" that will make you and your team satisfied
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
-- A "look and feel" that will make you and your partner happy!
 - Your application must have controller & model tests written
   - Your model tests should include tests for validations, relationships and any custom methods
   - We have provided a set of sample tests that you can use as a starting place for the `Driver` and `Passenger` models.  We have also provided a scaffolding for the `Trip` model.  You should feel free to adapt the tests to meet your design.
   - You will also need to write tests for your controller actions.
 
-### Things to Keep in Mind
+### Best Practices
 
 1. Use git relentlessly
 1. Pair program on difficult problems and to share learning experiences
@@ -81,7 +82,7 @@ However far you and your partner get, the application should have, at a minimum,
     - It is easy to validate too much! If it's not a hard requirement for your app to function, it probably shouldn't be a validation
     - If validations fail, let the user know why
 
-### Wireframes
+### Optional: Wireframes Requirement
 
 We have provided some wireframes below; they are optional to use for executing layout. However, they should provide guidance for what views and information we instructors are expecting to see and interact with as we grade.  We also have an [instructor reference version](https://ada-rideshare-demo.herokuapp.com/) of the application running.  You can use this for reference or ideas.
 
@@ -99,9 +100,7 @@ This is the recommended way to configure this project, but not a hard requiremen
 
 ---
 
-# Requirements
-
-## User Stories
+## Functional Requirements
 
 This project has a lot of user stories, and it is likely you and your partner won't get to all of them. Here is our prioritized list of what's important for this project, based on this week's learning goals:
 
@@ -116,54 +115,71 @@ This project has a lot of user stories, and it is likely you and your partner wo
 
 Please use this list as you decide what to work on (or at the end of the week as you decide what features to cut).
 
-### Overall
+### Navigation Requirements
 
-- From any page, I can click a menu entry to...
+Overall, write functionality, so that a user can easily and consistently navigate to other pages from any other page. Also, write functionality so that a user can understand form errors and correct them.
+
+- As a user, from any page, I want to have a consistent, easily accessible navigation menu with different buttons/links. These links go to different pages that let me...
   - View a list of all passengers
   - View a list of all drivers
   - Create a new passenger
   - Create a new driver
-- From any form in the site, if processing the form submission fails, the user should be politely informed of what went wrong and how they can correct it
+- As a user, when I fill out any form in the site and the processing of the form submission fails, I want to be politely informed of what went wrong and how I can correct it
 
-### Working with Passengers
+### Passengers Functionality Requirements
 
-- On the passenger list page I can click on a passenger to see that passenger's details
-- On the passenger's details page I can...
-  - See the total amount the passenger has been charged
-  - See a list of trips that passenger went on
-    - Clicking on a trip from the list will take me to a detail page for that trip
-  - Click links to edit and delete that passenger
-    - It is up to you and your pair on how to deal with "validations" surrounding deleting a passenger associated with a trip
-  - Add a new trip for this passenger
-    - An available driver is selected automatically by the server
-    - The trip starts with no rating
-- When adding a new passenger:
-  - The user must provide a name and phone number
-  - Don't worry about how the phone number is formatted
+- As a user who needs to manage passengers...
+  - On the passenger list page, I want to click on a passenger, so that I can see that passenger's details
+  - On the passenger's details page, I want to be able to...
+    - See the total amount the passenger has been charged
+    - See a list of trips that passenger went on
+    - Click on an individual trip from the list of trips, which will take me to a detail page for that trip
+    - Click a link to edit that passenger
+    - Click a link to delete that passenger
+    - Click a button to add a new trip for that passenger
 
-### Working with Drivers
+As a user who is adding a new passenger...
+  - I want to see errors and validations that show that a passenger must be provided a name and a phone number, so that I cannot make a passenger without name or phone number
 
-- On the driver list page I can click on a driver to see that driver's details
-- On the driver's details page I can...
-  - See the driver's total earnings
-    - The driver gets 80% of the trip cost after a fee of $1.65 is subtracted
-  - See the driver's average rating
-  - See a list of trips this driver has driven
-    - Clicking on a trip from the list will take me to a detail page for that trip
-  - Click links to edit and delete that driver
-    - It is up to you and your pair on how to deal with "validations" surrounding deleting a driver associated with a trip
-- When creating a new driver:
-  - The user must provide a name and VIN
-  - Don't worry about how the VIN is formatted
+#### Details
+
+- When a user deletes a passenger associated with a trip, it is up to you and your team on how to deal with "validations"/consequences surrounding the deleted passenger and the associated trip
+- When the user clicks a button to add a new trip for that passenger, use the following default values:
+  - An available driver is selected automatically by the server
+  - The trip starts with no rating
+- Don't worry about how a passenger's phone number is formatted
+
+### Drivers Functionality Requirements
+
+- As a user who needs to manage drivers...
+  - On the driver list page, I want to click on a driver, so that I can see that driver's details
+  - On the driver's details page, I want to be able to...
+    - See the driver's total earnings, as defined by the rules in the "Details" section
+    - See the driver's average rating
+    - See a list of trips this driver has driven
+    - Click on an individual trip from the list of trips, which will take me to a detail page for that trip
+    - Click a link to edit that driver
+    - Click a link to delete that driver
+
+As a user who is adding a new driver...
+  - I want to see errors and validations that show that a driver must be provided a name and VIN, so that I cannot make a driver without name or VIN
+
+#### Details
+
+- The driver gets 80% of the trip cost after a fee of $1.65 is subtracted
+- When a user deletes a driver associated with a trip, it is up to you and your team on how to deal with "validations"/consequences surrounding the deleted driver and the associated trip
+- Don't worry about how a driver's VIN is formatted
 
 ### Investigating Trips
 
-On the trip details page I can...
-
-- View details of the trip
-- Assign a rating (1-5) to the trip, if it does not already have one
-- Click links to detail pages for the trip's driver and passenger
-- Click links to edit and delete the trip
+As a user who needs to manage trips...
+- When I am on a trip's detail page, I want to be able to...
+  - View details of the trip
+  - Assign a rating (1-5) to the trip, if it does not already have one
+  - Click a link to the detail page for the trip's passenger
+  - Click a link to the detail page for the trip's driver
+  - Click a link to edit the trip
+  - Click a link to delete the trip
 
 ## Wireframes
 
