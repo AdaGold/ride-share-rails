@@ -11,6 +11,7 @@ describe Passenger do
 
   it "will have the required fields" do
     # Arrange
+    new_passenger.save
     passenger = Passenger.first
     [:name, :phone_number].each do |field|
 
@@ -22,6 +23,7 @@ describe Passenger do
   describe "relationships" do
     it "can have many trips" do
       # Arrange
+      new_passenger.save
       passenger = Passenger.first
 
       # Assert
