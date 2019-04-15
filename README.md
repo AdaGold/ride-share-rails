@@ -63,6 +63,10 @@ However far you and your partner get, the application should have, at a minimum,
 - [RESTful routing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/mvc-and-restful-routing.md)
 - A "look and feel" that will make you and your team satisfied
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
+- Your application must have controller & model tests written
+  - Your model tests should include tests for validations, relationships and any custom methods
+  - We have provided a set of sample tests that you can use as a starting place for the `Driver` and `Passenger` models.  We have also provided a scaffolding for the `Trip` model.  You should feel free to adapt the tests to meet your design.
+  - You will also need to write tests for your controller actions.
 
 ### Best Practices
 
@@ -80,7 +84,7 @@ However far you and your partner get, the application should have, at a minimum,
 
 ### Optional: Wireframes Requirement
 
-We have provided some wireframes below; they are optional to use for executing layout. However, they should provide guidance for what views and information we instructors are expecting to see and interact with as we grade.
+We have provided some wireframes below; they are optional to use for executing layout. However, they should provide guidance for what views and information we instructors are expecting to see and interact with as we grade.  We also have an [instructor reference version](https://ada-rideshare-demo.herokuapp.com/) of the application running.  You can use this for reference or ideas.
 
 ### Seeding the Database
 
