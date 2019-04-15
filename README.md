@@ -6,13 +6,12 @@
 
 ## Introduction & Objective
 
-In this project you will build a website to model a small community Rideshare app in Rails
+A small community just created a Rideshare program for its local area. This project is to build a Rails app that manages that Rideshare program.
 
-There will be two main pieces of functionality:
+The community needs the following main pieces of functionality:
 - New passengers and drivers can sign up for the service and review their information
-- Passengers can request and rate trips, and drivers can see their aggregated statistics
-
-This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your partner can create the waves yourself based on the dependencies of the requirements given.
+- Passengers can request and rate trips
+- Drivers can see their aggregated statistics
 
 ## Learning Goals
 
@@ -23,47 +22,49 @@ This project should demonstrate your ability to:
 1. Craft effective RESTful routing
 1. Work with a partner to create an attractive and functional Rails site
 1. Practice Agile methodology
-1. Work with a large amount of existing data in a rails app
+1. Work with a large amount of existing data in a Rails app
 
-## Baseline
+## Objective
 
-### Initial Setup
+This project is meant to be exploratory. Take time to try to dive into each piece of Rails (routes, controllers, models, views). This project is built so that you and your team can create the waves yourself based on the dependencies of the requirements given.
+
+## Getting Started
 
 Before you start writing _any_ code:
 
 - High five your team
 - Discuss communication style/feedback style with your team
 - Review the requirements with your team
-- Follow any instructions given to the class regarding joining a specific Trello team/organization
-- Create a Trello board (in the correct team/org if applicable)
+- Create a Trello board
+  - Ensure all team members can manage the board
   - Write and organize tasks/stories
   - Prioritize tasks/stories
   - Discuss who is interested in which tasks and any scheduling considerations
     - What things should be done together as pairs vs individually?
 - Create a diagram based on the data in the CSV files
 
+## Setup Requirements
+
 Once the above is complete, this project:
 
-- Requires a shared repo with your partner as a collaborator
-- Requires you to create a Rails application which
+- Requires a shared repo with all team members as collaborators
+- Requires the team to create a Rails application which
   - Conforms to Rails conventions on naming and inflection
-  - Is created by using `rails new .` you will create a new rails app _inside_ of the fork folder instead of creating a _new_ folder for your rails app
+  - Is created by using `rails new .`. You will create a new rails app _inside_ of the fork folder instead of creating a _new_ folder for your rails app
     - `rails new .` will ask if you want to overwrite the existing files `README.md` and `db/seeds.rb`. Answer `n` to both of these (keep the existing file)
   - Uses [Postgresql](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/how-to-use-postgres.md) as its database. (This should already be configured correctly if you followed our Ada Install Fest for Rails)
 
-**Your team should message your instructors and notify them that your board is ready for review.**
-
-### Minimum Requirements
+## Baseline Requirements
 
 However far you and your partner get, the application should have, at a minimum, the following features:
 
 - Seeded data in your database from the original CSV files (see below)
 - Multiple related Active Record models
 - [RESTful routing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/mvc-and-restful-routing.md)
+- A "look and feel" that will make you and your team satisfied
 - Deployed application to [Heroku](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/00-programming-fundamentals/11-deploying-to-heroku.md)
-- A "look and feel" that will make you and your partner happy!
 
-### Things to Keep in Mind
+### Best Practices
 
 1. Use git relentlessly
 1. Pair program on difficult problems and to share learning experiences
@@ -77,7 +78,7 @@ However far you and your partner get, the application should have, at a minimum,
     - It is easy to validate too much! If it's not a hard requirement for your app to function, it probably shouldn't be a validation
     - If validations fail, let the user know why
 
-### Wireframes
+### Optional: Wireframes Requirement
 
 We have provided some wireframes below; they are optional to use for executing layout. However, they should provide guidance for what views and information we instructors are expecting to see and interact with as we grade.
 
