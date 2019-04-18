@@ -20,7 +20,6 @@ Uses named routes (like `_path`) |
 RESTful routes utilized |
 **Project Requirements** |
 Table relationships |
-Validation rules for Models |
 Business logic is in the models |
 Controller tests | 
 Database is seeded from the CSV files |
