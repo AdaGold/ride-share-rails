@@ -22,9 +22,7 @@ RESTful routes utilized |
 Table relationships |
 Validation rules for Models |
 Business logic is in the models |
-Tests for validations | 
-Tests for relationships | 
-Tests for custom model methods |
+Controller tests | 
 Database is seeded from the CSV files |
 Trello board is created and utilized in project management |
 Heroku instance is online |
