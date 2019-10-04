@@ -9,7 +9,8 @@
 A small community just created a Rideshare program for its local area. This project is to build a Rails app that manages that Rideshare program.
 
 The community needs the following main pieces of functionality:
-- New passengers and drivers can sign up for the service and review their information
+- New passengers and drivers can sign up for the service
+- Passengers' and drivers' information can be reviewed and edited
 - Passengers can request and rate trips
 - Drivers can see their aggregated statistics:
   - How many rides the driver has given
