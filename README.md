@@ -11,6 +11,7 @@ A small community just created a Rideshare program for its local area. This proj
 The community needs the following main pieces of functionality:
 - New passengers and drivers can sign up for the service
 - Passengers' and drivers' information can be reviewed and edited
+- Passengers and drivers can be deleted
 - Passengers can request and rate trips
 - Drivers can see their aggregated statistics:
   - How many rides the driver has given
