@@ -5,15 +5,15 @@ describe TripsController do
     # Your tests go here
   end
 
+  describe "create" do
+    # Your tests go here
+  end
+
   describe "edit" do
     # Your tests go here
   end
 
   describe "update" do
-    # Your tests go here
-  end
-
-  describe "create" do
     # Your tests go here
   end
 
