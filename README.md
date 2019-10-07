@@ -9,9 +9,18 @@
 A small community just created a Rideshare program for its local area. This project is to build a Rails app that manages that Rideshare program.
 
 The community needs the following main pieces of functionality:
-- New passengers and drivers can sign up for the service and review their information
+- New passengers and drivers can sign up for the service
+- Passengers' and drivers' information can be reviewed and edited
+- Passengers and drivers can be deleted
 - Passengers can request and rate trips
-- Drivers can see their aggregated statistics
+- Drivers can see their aggregated statistics:
+  - How many rides the driver has given
+  - Average rating of all rides the driver has given
+
+### A Note About Project Design/Expectations
+If this were a full production-ready web application, this app would support true user sign-in. However, this would require us to support authentication and maintain state to understand who (if anyone) is currently signed in.
+
+Because we aren't prepared to support those features yet, it may be more useful to think of this application as an administrative portal, on which the user has access to all drivers' and riders' data. Further, whoever is using the application has the ability create rider and drivers and to "act" as any rider (ie. requesting trips and rating rides).
 
 ## Learning Goals
 
