@@ -29,8 +29,8 @@ describe Driver do
       trip_2 = Trip.create(driver_id: new_driver.id, passenger_id: new_passenger.id, date: Date.today, rating: 3, cost: 6334)
 ​
       # Assert
-      expect(new_passenger.trips.count).must_equal 2
-      new_passenger.trips.each do |trip|
+      expect(new_driver.trips.count).must_equal 2
+      new_driver.trips.each do |trip|
         expect(trip).must_be_instance_of Trip
       end
     end
