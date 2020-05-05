@@ -81,7 +81,7 @@ However far you and your partner get, the application should have, at a minimum,
 
 1. Use git relentlessly
 1. Pair program on difficult problems and to share learning experiences
-1. Don't leave deployment to the last second-- it will take longer than you anticipate
+1. Don't leave deployment (optional requirement) to the last second-- it will take longer than you anticipate
 1. Business logic should be implemented in the model
 1. You will probably need nested routes, but avoid routes that are more than 2 levels deep
 1. Use semantic HTML
@@ -94,6 +94,10 @@ However far you and your partner get, the application should have, at a minimum,
 ### Optional: Wireframes Requirement
 
 We have provided some wireframes below; they are optional to use for executing layout. However, they should provide guidance for what views and information we instructors are expecting to see and interact with as we grade.  We also have an [instructor reference version](https://ada-rideshare-demo.herokuapp.com/) of the application running.  You can use this for reference or ideas.
+
+### Optional: Deployment Requirement
+
+Deploy your app to Heroku, and give it life online! Share the URL to the app in the reflection questions at the time of submission.
 
 ### Seeding the Database
 
@@ -117,7 +121,6 @@ This project has a lot of user stories, and it is likely you and your partner wo
     - Creating new trips
 1. Model validations and reporting errors to the user
 1. Basic structure of a complex Rails app
-1. Deployment
 1. Complex business logic
     - Driver earning and average rating
 1. Styling and design
