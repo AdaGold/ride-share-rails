@@ -153,16 +153,22 @@ As a user who is adding a new passenger...
 #### Details
 
 - When a user deletes a passenger associated with a trip, it is up to you and your team on how to deal with "validations"/consequences surrounding the deleted passenger and the associated trip
-- When the user clicks a button to add a new trip for that passenger, use the following default values:
-  - An available driver is selected automatically by the server
-  - The trip starts with no rating
 - Don't worry about how a passenger's phone number is formatted
+
+#### Requesting a Trip Details
+- When the user clicks a button to add a new trip for that passenger, use the following default values:
+  - A driver is selected automatically by the server. This driver should be available (`available` should be `true`) at the time of the trip request, and then should become unavailable (`available` should be `false`) once assigned to this trip.
+  - The trip starts with no rating
+  - For price of the trip, your program should determine the cost when the ride is assigned. It can/should just be a random number within some range.
 
 ### Drivers Functionality Requirements
 
 - As a user who needs to manage drivers...
   - On the driver list page, I want to click on a driver, so that I can see that driver's details
   - On the driver's details page, I want to be able to...
+    - See the driver's availability status
+    - See the driver's name
+    - See the driver's vin
     - See the driver's total earnings, as defined by the rules in the "Details" section
     - See the driver's average rating
     - See a list of trips this driver has driven
@@ -172,6 +178,7 @@ As a user who is adding a new passenger...
 
 As a user who is adding a new driver...
   - I want to see errors and validations that show that a driver must be provided a name and VIN, so that I cannot make a driver without name or VIN
+  - I want the new driver to be available by default
 
 #### Details
 
@@ -197,6 +204,7 @@ Homepage:
 ![Homepage](images/Rideshare-Rails-Wireframe-homepage.png)
 
 Add a Driver:
+(Only include the fields required by this project)
 
 ![Add A Driver](images/Rideshare-Rails-Wireframe-add-driver.png)
 
@@ -205,6 +213,7 @@ Drivers List:
 ![Driver List](images/Rideshare-Rails-Wireframe-drivers-index.png)
 
 Driver Show Page:
+(Only include the fields required by this project. Include the driver "Available" status.)
 
 ![Driver Show Page](images/Rideshare-Rails-Wireframe-show-driver.png)
 
