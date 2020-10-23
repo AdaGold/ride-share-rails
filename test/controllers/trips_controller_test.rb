@@ -60,10 +60,10 @@ describe TripsController do
       @trip.save
       id = Trip.first.id
       expect {
-        patch trip_path(Trip.first.id), params: new_trip_hash
+        patch trip_path(id), params: new_trip_hash
       }.wont_change "Trip.count"
 
-      trip = Trip.find_by(id: Trip.first.id)
+      trip = Trip.find_by(id: id)
       must_redirect_to trip_path(id)
   
       expect(trip.date).must_equal new_trip_hash[:trip][:date]
