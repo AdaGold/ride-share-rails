@@ -1,6 +1,7 @@
 # Rideshare Rails
 
 ## At a Glance
+
 - Pair, [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/classroom/rule-of-three.md#stage-2) project
 - Due EOD **DATE HERE**
 - Submit this project with a PR
@@ -19,6 +20,7 @@ The community needs the following main pieces of functionality:
   - Average rating of all rides the driver has given
 
 ### A Note About Project Design/Expectations
+
 If this were a full production-ready web application, this app would support true user sign-in. However, this would require us to support authentication and maintain state to understand who (if anyone) is currently signed in.
 
 Because we aren't prepared to support those features yet, it may be more useful to think of this application as an administrative portal, on which the user has access to all drivers' and riders' data. Further, whoever is using the application has the ability create rider and drivers and to "act" as any rider (ie. requesting trips and rating rides).
@@ -42,7 +44,7 @@ This project is meant to be exploratory. Take time to try to dive into each piec
 
 Before you start writing _any_ code:
 
-- High five your team
+- High five your team (virtually, if needed)
 - Discuss communication style/feedback style with your team
 - Review the requirements with your team
 - Create a Trello board
