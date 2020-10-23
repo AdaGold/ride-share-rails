@@ -63,7 +63,7 @@ describe TripsController do
       }.wont_change "Trip.count"
 
       trip = Trip.find_by(id: Trip.first.id)
-      must_redirect_to trip_path(@trip.id)
+      must_redirect_to trip_path(trip.id)
   
       expect(trip.date).must_equal new_trip_hash[:trip][:date]
       expect(trip.passenger_id).must_equal new_trip_hash[:trip][:passenger_id]
