@@ -1,0 +1,48 @@
+<div class="show-style">
+  <img class = "profile_picture" src="https://www.randomdoggiegenerator.com/randomdoggie.php" alt = "random pictures of dogs">
+  <h1> <%= @passenger.name %> </h1>
+  <p>  &#128222 <%= @passenger.phone_num %> </p>
+  <p> <strong>Total Charges: </strong> $<%= @passenger.total_charges %> </p>
+
+  <% available_drivers = Driver.where(available: true) %> 
+  <% if available_drivers == [] %>
+    Sorry! There currently are no available drivers. Please try to request trip later.
+  <% else %>
+    <strong><%= "Currently there are #{available_drivers.length} drivers available." %></strong>
+  <% end %>
+    <br>
+    <br>
+  <button class="show-btn"> <%= link_to 'Request New Trip', passenger_trips_path(@passenger.id), method: :post %> </button>
+    <br>
+  <button class="show-btn"> <%= link_to 'Edit Passenger', edit_passenger_path %> </button>
+    <br>
+  <button class="show-btn"> <%= link_to 'Delete Passenger', passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete passenger: #{@passenger.name}?"} %></button>
+    <br>
+    <br>
+    <br>
+  <% if @passenger.trips.count > 0 %>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-0">
+        <tr>
+          <th scope="col"> Trip ID </th>
+          <th scope="col"> Date </th>
+          <th scope="col"> Driver Name </th>
+          <th scope="col"> Passenger Name </th>
+        </tr>
+      <% @passenger.trips.order(date: :desc).each do |trip| %>
+        <% driver = (Driver.find_by(id: trip.driver_id)) %>
+        <% if !driver.nil? %>
+        <tr>
+          <th scope="row"> <%= link_to "Trip##{trip.id}", trip_path(trip.id) %> </th>
+          <td> <%= trip.date %> </td>
+          <td> <%= link_to driver.name, driver_path(driver.id) %> </td>
+          <td> <%= link_to @passenger.name, passenger_path(@passenger.id) %> </td>
+        </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+  <% else %>
+    <p><strong> <%= "#{@passenger.name} currently has no trips." %> </strong></p>
+  <% end %>
+</div>

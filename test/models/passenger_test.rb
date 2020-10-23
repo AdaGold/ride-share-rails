@@ -27,7 +27,7 @@ describe Passenger do
       new_driver = Driver.create(name: "Waldo", vin: "ALWSS52P9NEYLVDE9")
       trip_1 = Trip.create(driver_id: new_driver.id, passenger_id: new_passenger.id, date: Date.today, rating: 5, cost: 1234)
       trip_2 = Trip.create(driver_id: new_driver.id, passenger_id: new_passenger.id, date: Date.today, rating: 3, cost: 6334)
-
+# ​      binding.pry
       # Assert
       expect(new_passenger.trips.count).must_equal 2
       new_passenger.trips.each do |trip|
@@ -60,7 +60,24 @@ describe Passenger do
 
   # Tests for methods you create should go here
   describe "custom methods" do
+    before do
+      new_passenger.save
+      @new_driver = Driver.create!(name: "DriverWink", vin: "12345678901234567")
+      @trip1 = Trip.create!(passenger_id: new_passenger.id, driver_id: @new_driver.id, cost: 10)
+      @trip2 = Trip.create!(passenger_id: new_passenger.id, driver_id: @new_driver.id, cost: 50)
+    end
+    
+    describe "total charges" do
+      it "returns the total charges of all the passenger's trips" do
+        costs = @trip1.cost + @trip2.cost
+        expect(new_passenger.total_charges).must_equal costs
+      end
+    end
+
+
     describe "request a ride" do
+
+
       # Your code here
     end
 

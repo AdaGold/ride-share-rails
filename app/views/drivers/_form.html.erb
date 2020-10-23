@@ -1,0 +1,21 @@
+<%if @driver.errors.any?%>
+   <ul>
+      <%@driver.errors.each do |column, message|%>
+        <li>Ooopppsss &#128584 &#128584 &#128584 ... <%=column.capitalize%> <%=message%></li>
+      <%end%>
+   </ul>
+<%end%>
+
+
+<%= form_with model: @driver do |f| %>
+  <p>Please provide the following information:</p>
+
+
+  <%= f.label :name, class: 'required'%>
+  <%= f.text_field :name %>
+     <br>
+  <%= f.label :vin, class: 'required' %>
+  <%= f.text_field :vin, placeholder: "17 chars"%>
+     <br>
+  <%= f.submit "#{action_name} Driver", class:"show-btn" %>
+<% end %>

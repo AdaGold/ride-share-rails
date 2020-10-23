@@ -1,0 +1,21 @@
+<%if @passenger.errors.any?%>
+   <ul>
+      <%@passenger.errors.each do |column, message|%>
+        <li>Ooopppsss &#128584 &#128584 &#128584 ... <%=column.capitalize%> <%=message%></li>
+      <%end%>
+   </ul>
+<%end%>
+
+<%= form_with model: @passenger do |f|%>
+<p>Please provide the following information:</p>
+  <div>
+    <%= f.label :name, class: 'required' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :phone_num, class: 'required'%>
+    <%= f.text_field :phone_num %>
+  </div>
+
+  <%= f.submit "#{action_name} Passenger", class:"show-btn" %>
+<% end %>

@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+
+@import "**/*";
+
+body {
+  min-height: 100vh;
+  background-color: rgb(240, 239, 239);
+}
+
+.layout-footer, .layout-nav {
+  text-align: center;
+  background-color: rgb(65, 78, 78);
+}
+
+.layout-nav {
+  background-color: rgb(65, 78, 78);
+  height: 12vh;
+  padding: 3rem 0 0 0;
+  
+}
+
+.layout-footer {
+  color: goldenrod;
+  bottom: 0;
+  padding: 2rem;
+}
+
+
+a:hover {
+  color: rgb(102, 102, 173);
+}
+
+// drop-down menu reference: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
+.dropbtn, .homebtn, .show-btn {
+  background-color: goldenrod;
+  border: goldenrod solid 0.2rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  width: 10rem;
+}
+
+.homepage-logo {
+  color: goldenrod;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 53rem 0 1rem;
+}
+
+.homebtn a {
+  color: goldenrod;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 10rem;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0.5rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color:goldenrod;
+  color: whitesmoke;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: whitesmoke;
+}
+
+.dropdown:hover .homebtn {
+  background-color:#3a3042;
+  color: goldenrod;
+}
+
+.forms-style, .show-style {
+  min-height: 80vh;
+  padding: 2rem 10rem;
+
+}
+
+.forms-style{
+  padding: 10rem 35rem;
+}
+
+.index-view {
+  padding: 2rem 10rem;
+  min-height: 80vh;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 30vh;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+  border: solid  goldenrod 0.5rem;
+}
+
+.index_table{
+  height: 60vh;
+}
+
+.index-newbtn {
+  background-color: goldenrod;
+}
+
+.nav-logo a:hover {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.show-btn {
+  padding: 0.2rem;
+  margin: 0.2rem;
+  font-size: 1rem;
+  font-weight: normal;
+  width: 15rem;
+}
+
+form label.required:after{
+    color: red;
+    content: " *";
+}
+
+.profile_picture{
+ border: solid  goldenrod 0.5rem;
+ border-radius: 50%;
+}
+
+.warning_message{
+  padding: 1rem 5rem;
+}

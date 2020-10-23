@@ -1,0 +1,53 @@
+<div class="show-style">
+  <img class = "profile_picture" src="https://www.randomdoggiegenerator.com/randomdoggie.php" alt = "random pictures of dogs">
+  <h1><%= @driver.name %></h1>
+   <br>
+  <strong>Vin:</strong> <%= @driver.vin %>
+   <br>
+  <strong>Status:</strong> <%= @driver.available ? "Available" : "Unavailable" %>
+     <br>
+  <strong>Total Trips:</strong> <%= @driver.trips.count %>
+   <br>
+  <strong>Rating:</strong> &#11088;<%= @driver.avg_rating %> / 5
+    <br>
+  <strong>Total Earnings:</strong> $<%= @driver.total_earnings %>
+      <br> 
+      <br>
+    <%if @driver.available%>
+  <button class="show-btn"> <%= link_to 'Make Unavailable', make_available_path(@driver.id), method: :patch %></button>
+    <%else%>
+  <button class="show-btn"> <%= link_to 'Make Available', make_available_path(@driver.id), method: :patch %></button>
+    <%end%>
+      <br>
+  <button class="show-btn"><%= link_to "Edit Driver", edit_driver_path(@driver.id) %></button>
+     <br>
+  <button class="show-btn"><%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete driver: #{@driver.name}?"}%> </button>
+    <br>
+    <br>
+  <% if @driver.trips.count > 0 %>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-0">
+      <tr>
+        <th scope="col"> Trip ID </th>
+        <th scope="col"> Date </th>
+        <th scope="col"> Driver Name </th>
+        <th scope="col"> Passenger Name </th>
+      </tr>
+ 
+      <% @driver.trips.order(date: :desc).each do |trip| %>
+        <% passenger = (Passenger.find_by(id: trip.passenger_id)) %>
+        <% if !passenger.nil? %>
+          <tr>
+            <th scope="row"> <%= link_to "Trip##{trip.id}", trip_path(trip.id) %> </th>
+            <td> <%= trip.date %> </td>
+            <td> <%= link_to @driver.name, driver_path(@driver.id) %> </td>
+            <td> <%= link_to passenger.name, passenger_path(passenger.id) %> </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+  <% else %>
+    <p><strong> <%= "#{@driver.name} currently has no trips." %> </strong></p>
+  <% end %>
+</div>

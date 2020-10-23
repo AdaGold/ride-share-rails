@@ -2,7 +2,7 @@
 
 ## At a Glance
 - Pair, [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/classroom/rule-of-three.md#stage-2) project
-- Due EOD **DATE HERE**
+- Due before class, **Wed May 13**
 - Submit this project with a PR
 
 ## Introduction & Objective

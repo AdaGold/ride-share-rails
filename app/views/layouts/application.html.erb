@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideShareRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="layout-nav">
+      <div class="dropdown nav-logo">
+        <%= link_to 'Good Ride Good Life', root_path, class: "homepage-logo" %>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Drivers</button>
+        <div class="dropdown-content">
+          <%= link_to 'All Drivers', drivers_path %> </li>
+          <%= link_to 'Create Driver', new_driver_path %> </li>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Passengers</button>
+        <div class="dropdown-content">
+          <%= link_to 'All Passengers', passengers_path %> </li>
+          <%= link_to 'Create Passenger', new_passenger_path %> </li>
+        </div>
+      </div>
+    </nav>
+    <section>
+    <%flash.each do |name, message|%>
+      <div class = "warning_message">🛑<%=message%></div>
+    <%end%>
+    </section>
+    <%= yield %>
+    <footer class="layout-footer">
+      Jetmire•Cathy © 2020
+    </footer>
+  </body>
+</html>

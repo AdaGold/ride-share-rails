@@ -1,0 +1,23 @@
+<div class="index-view">
+  <h1>All Passengers </h1>
+  <button class="index-newbtn"><%= link_to ' + New Passenger', new_passenger_path %></button>
+  <br>
+  <br>
+ <div class="table-wrapper-scroll-y my-custom-scrollbar index_table">
+    <table class="table table-bordered table-striped mb-0">
+      <tr>
+        <th scope="col"> ID </th>
+        <th scope="col"> Name </th>
+        <th scope="col"> Phone Number </th>
+      </tr>
+
+      <%@passengers.each do |passenger|%>
+        <tr>
+          <th scope="row"> <%= passenger.id %> </th>
+          <td> <%= link_to passenger.name, passenger_path(passenger.id) %> </td>
+          <td> <%= passenger.phone_num %> </td>
+        </tr>
+      <%end%>
+    </table>
+  </div>
+</div>

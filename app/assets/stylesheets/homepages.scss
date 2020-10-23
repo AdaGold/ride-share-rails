@@ -1,0 +1,19 @@
+// Place all the styles related to the Homepages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+a {
+  color: #3a3042;
+}
+
+.homepage-container {
+  // height: 70vh;
+  color: whitesmoke;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.homepage-img {
+  height: 80vh;
+  width: 50vw;
+}

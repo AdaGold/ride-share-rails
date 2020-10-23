@@ -1,0 +1,16 @@
+<div class="forms-style">
+  <%= form_with model: @trip do |f| %>
+    <p>Please provide the following information to edit your trip in our database:</p>
+
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+      <br>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+      <br>
+    <%= f.label :rating %>
+    <%= f.select :rating, options_for_select([1,2,3,4,5]) %>
+      <br>
+    <%= f.submit "Edit", class:"show-btn" %>
+  <% end %>
+</div>
