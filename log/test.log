@@ -3170,3 +3170,1060 @@ Processing by PassengersController#edit as HTML
   [1m[36mPassenger Load (0.4ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
 Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms | Allocations: 298)
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "schema_sha1"]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------
+Passenger::validations: test_0002_must have a phone number
+----------------------------------------------------------
+  [1m[36mPassenger Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+Passenger::validations: test_0001_must have a name
+--------------------------------------------------
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "111-111-1211"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------
+Trip: test_0001_can be instantiated
+-----------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------
+Trip: test_0002_will have the required fields
+---------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------------------------
+Driver::custom methods::average rating: test_0001_returns the correct average rating for the driver
+---------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (10.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (3.9ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kari"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:02.557365"], ["updated_at", "2020-10-23 17:51:02.557365"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "1234567890"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (3.7ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "PassengerWinkWink"], ["phone_num", "1234567890"], ["created_at", "2020-10-23 17:51:02.565376"], ["updated_at", "2020-10-23 17:51:02.565376"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  [1m[36mTrip Create (3.3ms)[0m  [1m[32mINSERT INTO "trips" ("rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 5], ["cost", 10.0], ["created_at", "2020-10-23 17:51:02.606684"], ["updated_at", "2020-10-23 17:51:02.606684"], ["passenger_id", 67], ["driver_id", 82]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  [1m[36mDriver Load (1.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 4], ["cost", 50.0], ["created_at", "2020-10-23 17:51:02.614240"], ["updated_at", "2020-10-23 17:51:02.614240"], ["passenger_id", 67], ["driver_id", 82]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTrip Load (7.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."rating" IS NOT NULL[0m  [["driver_id", 82]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."rating" IS NOT NULL[0m  [["driver_id", 82]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------------
+PassengersController::create: test_0003_does not create a passenger if name is not present, and responds with a redirect
+------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started POST "/passengers" for 127.0.0.1 at 2020-10-23 10:51:02 -0700
+Processing by PassengersController#create as HTML
+  Parameters: {"passenger"=>{"phone_num"=>"4259997777"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "4259997777"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering passengers/new.html.erb within layouts/application
+  Rendered passengers/_form.html.erb (Duration: 5.1ms | Allocations: 1414)
+  Rendered passengers/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1860)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 3386ms (Views: 3381.1ms | ActiveRecord: 0.5ms | Allocations: 42123)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------
+PassengersController::create: test_0001_can create a passanger
+--------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started POST "/passengers" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#create as HTML
+  Parameters: {"passenger"=>{"id"=>"10", "name"=>"Cathy Cathy", "phone_num"=>"8783 93093 3983"}}
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "8783 93093 3983"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy Cathy"], ["phone_num", "8783 93093 3983"], ["created_at", "2020-10-23 17:51:06.109531"], ["updated_at", "2020-10-23 17:51:06.109531"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/passengers/68
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 942)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------------------------------
+PassengersController::create: test_0002_does not create a passenger if phone number is not present, and responds with a redirect
+--------------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started POST "/passengers" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#create as HTML
+  Parameters: {"passenger"=>{"name"=>"We're all Wonderful!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering passengers/new.html.erb within layouts/application
+  Rendered passengers/_form.html.erb (Duration: 2.4ms | Allocations: 585)
+  Rendered passengers/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 640)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 34ms (Views: 30.4ms | ActiveRecord: 0.4ms | Allocations: 7964)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------------
+PassengersController::update: test_0001_can update an existing passanger with valid information accurately, and redirect
+------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "9340983094"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "We're all wonders"], ["phone_num", "9340983094"], ["created_at", "2020-10-23 17:51:06.163570"], ["updated_at", "2020-10-23 17:51:06.163570"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started PATCH "/passengers/69" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#update as HTML
+  Parameters: {"passenger"=>{"name"=>"Cathy Cathy", "phone_num"=>"90482309480924"}, "id"=>"69"}
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 AND "passengers"."id" != $2 LIMIT $3[0m  [["phone_num", "90482309480924"], ["id", 69], ["LIMIT", 1]]
+  [1m[36mPassenger Update (0.3ms)[0m  [1m[33mUPDATE "passengers" SET "name" = $1, "phone_num" = $2, "updated_at" = $3 WHERE "passengers"."id" = $4[0m  [["name", "Cathy Cathy"], ["phone_num", "90482309480924"], ["updated_at", "2020-10-23 17:51:06.186811"], ["id", 69]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/passengers/69
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 1238)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[36mPassenger Load (0.7ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 69], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------------
+PassengersController::update: test_0003_does not update a passenger if name is not present, and responds with a redirect
+------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "9340983094"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "We're all wonders"], ["phone_num", "9340983094"], ["created_at", "2020-10-23 17:51:06.196446"], ["updated_at", "2020-10-23 17:51:06.196446"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started PATCH "/passengers/70" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#update as HTML
+  Parameters: {"passenger"=>{"name"=>""}, "id"=>"70"}
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 70], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 AND "passengers"."id" != $2 LIMIT $3[0m  [["phone_num", "9340983094"], ["id", 70], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering passengers/edit.html.erb within layouts/application
+  Rendered passengers/_form.html.erb (Duration: 4.0ms | Allocations: 632)
+  Rendered passengers/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 795)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 33ms (Views: 27.8ms | ActiveRecord: 0.7ms | Allocations: 8420)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------------------------------------------
+PassengersController::update: test_0002_does not update any passenger if given an invalid id, and responds with a 404
+---------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started PATCH "/passengers/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#update as HTML
+  Parameters: {"passenger"=>{"name"=>"Cathy Cathy", "phone_num"=>"90482309480924"}, "id"=>"-1"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 301)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------------------------------
+PassengersController::update: test_0004_does not update a passenger if phone number is not present, and responds with a redirect
+--------------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "9340983094"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.3ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "We're all wonders"], ["phone_num", "9340983094"], ["created_at", "2020-10-23 17:51:06.258366"], ["updated_at", "2020-10-23 17:51:06.258366"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started PATCH "/passengers/71" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#update as HTML
+  Parameters: {"passenger"=>{"phone_num"=>""}, "id"=>"71"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 71], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 AND "passengers"."id" != $2 LIMIT $3[0m  [["phone_num", ""], ["id", 71], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering passengers/edit.html.erb within layouts/application
+  Rendered passengers/_form.html.erb (Duration: 0.8ms | Allocations: 623)
+  Rendered passengers/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 22ms (Views: 18.6ms | ActiveRecord: 0.6ms | Allocations: 8172)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------
+Passenger::relationships: test_0001_can have many trips
+-------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "111-111-1211"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.3ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kari"], ["phone_num", "111-111-1211"], ["created_at", "2020-10-23 17:51:06.293196"], ["updated_at", "2020-10-23 17:51:06.293196"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "ALWSS52P9NEYLVDE9"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Waldo"], ["vin", "ALWSS52P9NEYLVDE9"], ["created_at", "2020-10-23 17:51:06.295195"], ["updated_at", "2020-10-23 17:51:06.295195"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("date", "rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "2020-10-23"], ["rating", 5], ["cost", 1234.0], ["created_at", "2020-10-23 17:51:06.297321"], ["updated_at", "2020-10-23 17:51:06.297321"], ["passenger_id", 72], ["driver_id", 83]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.7ms)[0m  [1m[32mINSERT INTO "trips" ("date", "rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "2020-10-23"], ["rating", 3], ["cost", 6334.0], ["created_at", "2020-10-23 17:51:06.299310"], ["updated_at", "2020-10-23 17:51:06.299310"], ["passenger_id", 72], ["driver_id", 83]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."passenger_id" = $1[0m  [["passenger_id", 72]]
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."passenger_id" = $1[0m  [["passenger_id", 72]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+HomepagesController: test_0001_can get the homepage
+---------------------------------------------------
+Started GET "/" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by HomepagesController#index as HTML
+  Rendering homepages/index.html.erb within layouts/application
+  Rendered homepages/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 979)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 7975)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------
+DriversController::show: test_0002_responds with 404 with an invalid driver id
+------------------------------------------------------------------------------
+Started GET "/drivers/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 414)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------------------
+DriversController::show: test_0001_responds with success when showing an existing valid driver
+----------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.340059"], ["updated_at", "2020-10-23 17:51:06.340059"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/drivers/84" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"84"}
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 84]]
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."rating" IS NOT NULL[0m  [["driver_id", 84]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."cost" IS NOT NULL[0m  [["driver_id", 84]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."cost" IS NOT NULL[0m  [["driver_id", 84]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 84]]
+  Rendered drivers/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1780)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 1.8ms | Allocations: 8974)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+Driver: test_0001_can be instantiated
+-------------------------------------
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+Driver: test_0002_will have the required fields
+-----------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kari"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.393090"], ["updated_at", "2020-10-23 17:51:06.393090"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------
+PassengersController::index: test_0001_responds with success when there are many passenger saved
+------------------------------------------------------------------------------------------------
+Started GET "/passengers" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#index as HTML
+  Rendering passengers/index.html.erb within layouts/application
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers"[0m
+  Rendered passengers/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 350)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.3ms | Allocations: 6984)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------------
+PassengersController::index: test_0002_responds with success when there are no passenger
+----------------------------------------------------------------------------------------
+Started GET "/passengers" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#index as HTML
+  Rendering passengers/index.html.erb within layouts/application
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers"[0m
+  Rendered passengers/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 139)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 6636)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------
+Driver::custom methods::total earnings: test_0001_returns the total earnings of all the driver's trips
+------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.5ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kari"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.470250"], ["updated_at", "2020-10-23 17:51:06.470250"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "1234567890"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.3ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "PassengerWinkWink"], ["phone_num", "1234567890"], ["created_at", "2020-10-23 17:51:06.473426"], ["updated_at", "2020-10-23 17:51:06.473426"]]
+  [1m[35m (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 5], ["cost", 10.0], ["created_at", "2020-10-23 17:51:06.478115"], ["updated_at", "2020-10-23 17:51:06.478115"], ["passenger_id", 73], ["driver_id", 86]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 73], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["rating", 4], ["cost", 50.0], ["created_at", "2020-10-23 17:51:06.480225"], ["updated_at", "2020-10-23 17:51:06.480225"], ["passenger_id", 73], ["driver_id", 86]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."cost" IS NOT NULL[0m  [["driver_id", 86]]
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1 AND "trips"."cost" IS NOT NULL[0m  [["driver_id", 86]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------------------
+DriversController::edit: test_0001_responds with success when getting the edit page for an existing, valid driver
+-----------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.485864"], ["updated_at", "2020-10-23 17:51:06.485864"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/drivers/87/edit" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#edit as HTML
+  Parameters: {"id"=>"87"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 3.1ms | Allocations: 1024)
+  Rendered drivers/edit.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms | Allocations: 8067)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------------
+DriversController::edit: test_0002_responds with redirect when getting the edit page for a non-existing driver
+--------------------------------------------------------------------------------------------------------------
+Started GET "/drivers/-1/edit" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#edit as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 300)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------------------------------------
+DriversController::update: test_0002_does not update any driver if given an invalid id, and responds with a 404
+---------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started PATCH "/drivers/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"driver"=>{"name"=>"Speed", "vin"=>"12345678912345678"}, "id"=>"-1"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 299)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------------------
+DriversController::update: test_0004_does not update a driver if vin is not present, and responds with a redirect
+-----------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.550370"], ["updated_at", "2020-10-23 17:51:06.550370"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started PATCH "/drivers/88" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"driver"=>{"vin"=>""}, "id"=>"88"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", ""], ["id", 88], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 1.0ms | Allocations: 632)
+  Rendered drivers/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 687)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 14ms (Views: 10.6ms | ActiveRecord: 0.6ms | Allocations: 8589)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------------
+DriversController::update: test_0005_does not update a driver if vin is less than 17 chars, and responds with a redirect
+------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.581347"], ["updated_at", "2020-10-23 17:51:06.581347"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started PATCH "/drivers/89" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"driver"=>{"name"=>"Valid Name", "vin"=>"12345678"}, "id"=>"89"}
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 89], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", "12345678"], ["id", 89], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 0.8ms | Allocations: 627)
+  Rendered drivers/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 682)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 12ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 8198)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------
+DriversController::update: test_0003_does not update a driver if name is not present, and responds with a redirect
+------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.4ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.605817"], ["updated_at", "2020-10-23 17:51:06.605817"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started PATCH "/drivers/90" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"driver"=>{"name"=>""}, "id"=>"90"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 90], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", "12345678912345678"], ["id", 90], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 1.2ms | Allocations: 622)
+  Rendered drivers/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 677)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 17ms (Views: 13.5ms | ActiveRecord: 0.7ms | Allocations: 8186)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------
+DriversController::update: test_0001_can update an existing driver with valid information accurately, and redirect
+------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.634901"], ["updated_at", "2020-10-23 17:51:06.634901"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started PATCH "/drivers/91" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"driver"=>{"name"=>"Speed", "vin"=>"12345678912345678"}, "id"=>"91"}
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", "12345678912345678"], ["id", 91], ["LIMIT", 1]]
+  [1m[36mDriver Update (0.2ms)[0m  [1m[33mUPDATE "drivers" SET "name" = $1, "updated_at" = $2 WHERE "drivers"."id" = $3[0m  [["name", "Speed"], ["updated_at", "2020-10-23 17:51:06.646523"], ["id", 91]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/drivers/91
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms | Allocations: 1088)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 91], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------
+DriversController::index: test_0001_responds with success when there are many drivers saved
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.4ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.651695"], ["updated_at", "2020-10-23 17:51:06.651695"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/drivers" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 419)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 7052)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------
+DriversController::index: test_0002_responds with success when there are no drivers saved
+-----------------------------------------------------------------------------------------
+Started GET "/drivers" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 6638)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------------------------------------
+DriversController::destroy: test_0002_does not change the db when the driver does not exist, then responds with 
+----------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.698472"], ["updated_at", "2020-10-23 17:51:06.698472"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started DELETE "/drivers/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#destroy as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 293)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------------
+DriversController::destroy: test_0001_destroys the driver instance in db when driver exists, then redirects
+-----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.710204"], ["updated_at", "2020-10-23 17:51:06.710204"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started DELETE "/drivers/94" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by DriversController#destroy as HTML
+  Parameters: {"id"=>"94"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 94], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Destroy (0.2ms)[0m  [1m[31mDELETE FROM "drivers" WHERE "drivers"."id" = $1[0m  [["id", 94]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/drivers
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms | Allocations: 538)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------
+TripsController::destroy: test_0002_does not change the db when the trip does not exist, then responds with 
+------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.3ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.724816"], ["updated_at", "2020-10-23 17:51:06.724816"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.726738"], ["updated_at", "2020-10-23 17:51:06.726738"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+Started DELETE "/trips/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 414)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------
+TripsController::destroy: test_0001_destroys the trip instance in db when trip exists, then redirects
+-----------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.743052"], ["updated_at", "2020-10-23 17:51:06.743052"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.744499"], ["updated_at", "2020-10-23 17:51:06.744499"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 75], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 96], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2020-10-23 17:51:06.746696"], ["updated_at", "2020-10-23 17:51:06.746696"], ["passenger_id", 75], ["driver_id", 96]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+Started DELETE "/trips/52" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTrip Destroy (2.1ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = $1[0m  [["id", 52]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/passengers
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms | Allocations: 525)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------
+Passenger: test_0002_will have the required fields
+--------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "111-111-1211"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kari"], ["phone_num", "111-111-1211"], ["created_at", "2020-10-23 17:51:06.765273"], ["updated_at", "2020-10-23 17:51:06.765273"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+Passenger: test_0001_can be instantiated
+----------------------------------------
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "111-111-1211"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------------------
+PassengersController::edit: test_0002_responds with redirect when getting the edit page for a non-existing passenger
+--------------------------------------------------------------------------------------------------------------------
+Started GET "/passengers/-1/edit" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#edit as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 298)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------------------------
+PassengersController::edit: test_0001_responds with success when getting the edit page for an existing, valid passenger
+-----------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "9340983094"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.3ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "We're all wonders"], ["phone_num", "9340983094"], ["created_at", "2020-10-23 17:51:06.783641"], ["updated_at", "2020-10-23 17:51:06.783641"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/passengers/77/edit" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#edit as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 77], ["LIMIT", 1]]
+  Rendering passengers/edit.html.erb within layouts/application
+  Rendered passengers/_form.html.erb (Duration: 0.9ms | Allocations: 619)
+  Rendered passengers/edit.html.erb within layouts/application (Duration: 1.0ms | Allocations: 674)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 7296)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------------------------------
+Passenger::custom methods::total charges: test_0001_returns the total charges of all the passenger's trips
+----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "111-111-1211"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kari"], ["phone_num", "111-111-1211"], ["created_at", "2020-10-23 17:51:06.806638"], ["updated_at", "2020-10-23 17:51:06.806638"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678901234567"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "DriverWink"], ["vin", "12345678901234567"], ["created_at", "2020-10-23 17:51:06.809018"], ["updated_at", "2020-10-23 17:51:06.809018"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cost", 10.0], ["created_at", "2020-10-23 17:51:06.813624"], ["updated_at", "2020-10-23 17:51:06.813624"], ["passenger_id", 78], ["driver_id", 97]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 97], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cost", 50.0], ["created_at", "2020-10-23 17:51:06.815926"], ["updated_at", "2020-10-23 17:51:06.815926"], ["passenger_id", 78], ["driver_id", 97]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."passenger_id" = $1 AND "trips"."cost" IS NOT NULL[0m  [["passenger_id", 78]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------------------
+PassengersController::destroy: test_0001_destroys the passenger instance in db when passenger exists, then redirects
+--------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "9340983094"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "We're all wonders"], ["phone_num", "9340983094"], ["created_at", "2020-10-23 17:51:06.822614"], ["updated_at", "2020-10-23 17:51:06.822614"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" ORDER BY "passengers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started DELETE "/passengers/79" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#destroy as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Destroy (0.2ms)[0m  [1m[31mDELETE FROM "passengers" WHERE "passengers"."id" = $1[0m  [["id", 79]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/passengers
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms | Allocations: 519)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------------------------------------------
+PassengersController::destroy: test_0002_does not change the db when the passenger does not exist, then responds with 
+----------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+Started DELETE "/passengers/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by PassengersController#destroy as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 291)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "passengers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------------
+TripsController::update: test_0001_can update an existing trip with valid information accurately, and redirect
+--------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.850223"], ["updated_at", "2020-10-23 17:51:06.850223"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.852225"], ["updated_at", "2020-10-23 17:51:06.852225"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2020-10-23 17:51:06.854909"], ["updated_at", "2020-10-23 17:51:06.854909"], ["passenger_id", 80], ["driver_id", 98]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started PATCH "/trips/55" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#update as HTML
+  Parameters: {"trip"=>{"passenger_id"=>"80", "driver_id"=>"98"}, "id"=>"55"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+[31mUnpermitted parameters: :passenger_id, :driver_id[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mCACHE Trip Load (0.0ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  [1m[36mCACHE Driver Load (0.0ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 98], ["LIMIT", 1]]
+[31mUnpermitted parameters: :passenger_id, :driver_id[0m
+Redirected to http://www.example.com/trips/55
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 1350)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------------
+TripsController::update: test_0002_does not update any trip if given an invalid id, and responds with a 404
+-----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.879283"], ["updated_at", "2020-10-23 17:51:06.879283"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.881167"], ["updated_at", "2020-10-23 17:51:06.881167"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+Started PATCH "/trips/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#update as HTML
+  Parameters: {"trip"=>{"passenger_id"=>"81", "driver_id"=>"99"}, "id"=>"-1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 303)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------------------------------------
+TripsController::edit: test_0002_responds with redirect when getting the edit page for a non-existing trip
+----------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.898231"], ["updated_at", "2020-10-23 17:51:06.898231"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.899962"], ["updated_at", "2020-10-23 17:51:06.899962"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/trips/-1/edit" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#edit as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 304)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------------------------
+TripsController::edit: test_0001_responds with success when getting the edit page for an existing, valid trip
+-------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.911895"], ["updated_at", "2020-10-23 17:51:06.911895"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.913445"], ["updated_at", "2020-10-23 17:51:06.913445"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2020-10-23 17:51:06.915652"], ["updated_at", "2020-10-23 17:51:06.915652"], ["passenger_id", 83], ["driver_id", 101]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/trips/56/edit" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#edit as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  Rendering trips/edit.html.erb within layouts/application
+  Rendered trips/edit.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1385)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.3ms | Allocations: 8575)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------
+TripsController::show: test_0001_will get show for valid id
+-----------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.948159"], ["updated_at", "2020-10-23 17:51:06.948159"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.950471"], ["updated_at", "2020-10-23 17:51:06.950471"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2020-10-23 17:51:06.952869"], ["updated_at", "2020-10-23 17:51:06.952869"], ["passenger_id", 84], ["driver_id", 102]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/trips/57" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  Rendering trips/show.html.erb within layouts/application
+  [1m[36mPassenger Load (0.3ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 84], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered trips/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 769)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.6ms | Allocations: 7526)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------------------
+TripsController::show: test_0002_will respond with not_found for invalid ids
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:06.979376"], ["updated_at", "2020-10-23 17:51:06.979376"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.3ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.981663"], ["updated_at", "2020-10-23 17:51:06.981663"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/trips/-1" for 127.0.0.1 at 2020-10-23 10:51:06 -0700
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 304)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+Driver::relationships: test_0001_can have many trips
+----------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kari"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:06.999034"], ["updated_at", "2020-10-23 17:51:06.999034"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "111-111-1211"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kari"], ["phone_num", "111-111-1211"], ["created_at", "2020-10-23 17:51:07.001215"], ["updated_at", "2020-10-23 17:51:07.001215"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 104], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("date", "rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "2020-10-23"], ["rating", 5], ["cost", 1234.0], ["created_at", "2020-10-23 17:51:07.003304"], ["updated_at", "2020-10-23 17:51:07.003304"], ["passenger_id", 86], ["driver_id", 104]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 86], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 104], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("date", "rating", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["date", "2020-10-23"], ["rating", 3], ["cost", 6334.0], ["created_at", "2020-10-23 17:51:07.006134"], ["updated_at", "2020-10-23 17:51:07.006134"], ["passenger_id", 86], ["driver_id", 104]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 104]]
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 104]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------
+DriversController::make_available: test_0002_make driver unavailable if driver is available
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:07.010940"], ["updated_at", "2020-10-23 17:51:07.010940"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/driver/105/make_available" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#make_available as HTML
+  Parameters: {"id"=>"105"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 105], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", "12345678912345678"], ["id", 105], ["LIMIT", 1]]
+  [1m[36mDriver Update (0.2ms)[0m  [1m[33mUPDATE "drivers" SET "available" = $1, "updated_at" = $2 WHERE "drivers"."id" = $3[0m  [["available", false], ["updated_at", "2020-10-23 17:51:07.020608"], ["id", 105]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/drivers/105
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms | Allocations: 987)
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------------------------------------
+DriversController::make_available: test_0001_make driver available if driver is unavailable
+-------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.8ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lightning Mcqueen"], ["vin", "12345678912345678"], ["available", false], ["created_at", "2020-10-23 17:51:07.024186"], ["updated_at", "2020-10-23 17:51:07.024186"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/driver/106/make_available" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#make_available as HTML
+  Parameters: {"id"=>"106"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 106], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", "12345678912345678"], ["id", 106], ["LIMIT", 1]]
+  [1m[36mDriver Update (0.2ms)[0m  [1m[33mUPDATE "drivers" SET "available" = $1, "updated_at" = $2 WHERE "drivers"."id" = $3[0m  [["available", true], ["updated_at", "2020-10-23 17:51:07.036218"], ["id", 106]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/drivers/106
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms | Allocations: 986)
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------
+PassengersController::new: test_0001_resonse with succes
+--------------------------------------------------------
+Started GET "/passengers/new" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by PassengersController#new as HTML
+  Rendering passengers/new.html.erb within layouts/application
+  Rendered passengers/_form.html.erb (Duration: 0.8ms | Allocations: 573)
+  Rendered passengers/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 628)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 7134)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------------------------------------------
+TripsController::create: test_0001_can create a new trip with valid information accurately, and redirect
+--------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "234598739248"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cathy"], ["phone_num", "234598739248"], ["created_at", "2020-10-23 17:51:07.064580"], ["updated_at", "2020-10-23 17:51:07.064580"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeta"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:07.066227"], ["updated_at", "2020-10-23 17:51:07.066227"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+Started POST "/passengers/87/trips" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by TripsController#create as HTML
+  Parameters: {"passenger_id"=>"87"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."available" = $1 ORDER BY "drivers"."id" ASC LIMIT $2[0m  [["available", true], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Load (0.1ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 87], ["LIMIT", 1]]
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 107], ["LIMIT", 1]]
+  [1m[36mTrip Create (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("date", "cost", "created_at", "updated_at", "passenger_id", "driver_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "2020-10-23"], ["cost", 54.0], ["created_at", "2020-10-23 17:51:07.080379"], ["updated_at", "2020-10-23 17:51:07.080379"], ["passenger_id", 87], ["driver_id", 107]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/trips/60
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND "drivers"."id" != $2 LIMIT $3[0m  [["vin", "12345678912345678"], ["id", 107], ["LIMIT", 1]]
+  [1m[36mDriver Update (0.3ms)[0m  [1m[33mUPDATE "drivers" SET "available" = $1, "updated_at" = $2 WHERE "drivers"."id" = $3[0m  [["available", false], ["updated_at", "2020-10-23 17:51:07.084024"], ["id", 107]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms | Allocations: 2049)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" ORDER BY "trips"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------
+DriversController::new: test_0001_responds with success
+-------------------------------------------------------
+Started GET "/drivers/new" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#new as HTML
+  Rendering drivers/new.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 1.0ms | Allocations: 571)
+  Rendered drivers/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 726)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 7364)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+Driver::validations: test_0001_must have a name
+-----------------------------------------------
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------
+Driver::validations: test_0002_must have a VIN number
+-----------------------------------------------------
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------------------------------------------------------------------------
+DriversController::create: test_0002_does not create a driver if vin is not present, and responds with a redirect
+-----------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started POST "/drivers" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#create as HTML
+  Parameters: {"driver"=>{"name"=>"Drivers are all Wonderful!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering drivers/new.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 1.2ms | Allocations: 583)
+  Rendered drivers/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 40ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 8284)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------------
+DriversController::create: test_0003_does not create a driver if name is not present, and responds with a redirect
+------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started POST "/drivers" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#create as HTML
+  Parameters: {"driver"=>{"vin"=>"12345678901234567"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678901234567"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering drivers/new.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 1.1ms | Allocations: 575)
+  Rendered drivers/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 11ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 7976)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------------------------------------------------
+DriversController::create: test_0004_does not create a driver if vin is shorter than 17 chars, and responds with a redirect
+---------------------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started POST "/drivers" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#create as HTML
+  Parameters: {"driver"=>{"name"=>"Valid Name", "vin"=>"12345678"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering drivers/new.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (Duration: 0.7ms | Allocations: 583)
+  Rendered drivers/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 638)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 400 Bad Request in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 8007)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------------------------------------------------------
+DriversController::create: test_0001_can create a new driver with valid information accurately, and redirect
+------------------------------------------------------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+Started POST "/drivers" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by DriversController#create as HTML
+  Parameters: {"driver"=>{"name"=>"Speed", "vin"=>"12345678912345678"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDriver Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "12345678912345678"], ["LIMIT", 1]]
+  [1m[36mDriver Create (0.2ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "available", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Speed"], ["vin", "12345678912345678"], ["available", true], ["created_at", "2020-10-23 17:51:07.220901"], ["updated_at", "2020-10-23 17:51:07.220901"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/drivers/108
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms | Allocations: 936)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[36mDriver Load (0.1ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" ORDER BY "drivers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------------------
+PassengersController::show: test_0001_will get show for valid id
+----------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPassenger Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "passengers" WHERE "passengers"."phone_num" = $1 LIMIT $2[0m  [["phone_num", "9340983094"], ["LIMIT", 1]]
+  [1m[36mPassenger Create (0.2ms)[0m  [1m[32mINSERT INTO "passengers" ("name", "phone_num", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "We're all wonders"], ["phone_num", "9340983094"], ["created_at", "2020-10-23 17:51:07.228082"], ["updated_at", "2020-10-23 17:51:07.228082"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/passengers/88" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by PassengersController#show as HTML
+  Parameters: {"id"=>"88"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", 88], ["LIMIT", 1]]
+  Rendering passengers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."passenger_id" = $1 AND "trips"."cost" IS NOT NULL[0m  [["passenger_id", 88]]
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers" WHERE "drivers"."available" = $1[0m  [["available", true]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips" WHERE "trips"."passenger_id" = $1[0m  [["passenger_id", 88]]
+  Rendered passengers/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1368)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.8ms | Allocations: 8121)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------------------------
+PassengersController::show: test_0002_will respond with not_found for invalid ids
+---------------------------------------------------------------------------------
+Started GET "/passengers/-1" for 127.0.0.1 at 2020-10-23 10:51:07 -0700
+Processing by PassengersController#show as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mPassenger Load (0.2ms)[0m  [1m[34mSELECT "passengers".* FROM "passengers" WHERE "passengers"."id" = $1 LIMIT $2[0m  [["id", -1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 298)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m

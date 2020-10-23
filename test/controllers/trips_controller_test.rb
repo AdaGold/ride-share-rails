@@ -58,12 +58,13 @@ describe TripsController do
   describe "update" do
     it "can update an existing trip with valid information accurately, and redirect" do
       @trip.save
+      id = Trip.first.id
       expect {
         patch trip_path(Trip.first.id), params: new_trip_hash
       }.wont_change "Trip.count"
 
       trip = Trip.find_by(id: Trip.first.id)
-      must_redirect_to trip_path(trip.id)
+      must_redirect_to trip_path(id)
   
       expect(trip.date).must_equal new_trip_hash[:trip][:date]
       expect(trip.passenger_id).must_equal new_trip_hash[:trip][:passenger_id]
