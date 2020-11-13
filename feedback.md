@@ -46,7 +46,7 @@ All other questions are qualitative.
 
 | Overall Feedback | Criteria | yes/no |
 | --- | --- | --- |
-| Green (Meets/Exceeds Standards) | 8+ in Code Review && 5+ in Functional Requirements | 
+| Green (Meets/Exceeds Standards) | 7+ in Code Review && 5+ in Functional Requirements | 
 | Yellow (Approaches Standards) | 5+ in Code Review && 4+ in Functional Requirements, or the instructor judges that this project needs special attention | 
 | Red (Not at Standard) | 0-4 in Code Review or 0-3 in Functional Reqs, or assignment is breaking/doesn’t run with less than 5 minutes of debugging, or the instructor judges that this project needs special attention | 
 
